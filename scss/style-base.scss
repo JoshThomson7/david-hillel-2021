@@ -277,7 +277,7 @@ header.header { width:100%; transition: top .3s ease; position: sticky; z-index:
             .logo {
     
                 a { display:block;
-                    img { width: 150px; align-self:center; margin: 0 auto;
+                    img { width: 88px; align-self:center; margin: 0 auto;
                         @include breakpoint(papabear) { width: 120px;}
                     }
                 }
@@ -331,13 +331,13 @@ header.header { width:100%; transition: top .3s ease; position: sticky; z-index:
             }
 
             .contact{
-                margin-bottom: 5px;
+                margin-bottom: 15px;
                 @include breakpoint(papabear) { margin-right: 30px; margin-bottom: 0;}
                 @include breakpoint(teenbear) {display: none;}
 
                 li{
 
-                    i{color: $tertiary; margin-right: 7px; font-size: 22px;}
+                    i{color: $primary; margin-right: 7px; font-size: 22px;}
 
                     a{ color: $text; font-family: $primaryFont;
                         &:hover{
@@ -486,83 +486,6 @@ section {
     }
 }
 
-.footer-form{
-    background-image: linear-gradient(to bottom, rgba($primary, 0.5), rgba($primary, 0.5)),
-    url('http://hmf.wpdev2.com/wp-content/uploads/2021/04/CTA-scaled.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;
-
-    .footer__signup {
-
-        .max__width{
-            display: flex; justify-content: space-between; padding: 80px 10px; align-items: center;
-            
-            @include breakpoint(grandpabear) { flex-direction: column; align-items: center;}
-            @include breakpoint(papabear) { margin-bottom: 0;}
-        }
-
-        &__heading { flex: 1; width: 100%; max-width: 300px; min-width: 170px;
-            @include breakpoint(grandpabear) { text-align: center; min-width: 100%; padding-bottom: 20px;}
-
-            h3 { font-size: 22px; color: $white; margin-bottom: 10px; font-weight: 600;}
-            p { font-size: 14px; line-height: 20px; color: $white;}
-        }
-
-        &__form { flex: 2;
-
-            #mc_embed_signup div#mce-responses{
-                display: none;
-            }
-
-            .form__row { display: flex; justify-content: flex-end; align-items: center;
-                @include breakpoint(brotherbear) { flex-direction: column;}
-
-                .form__field { margin-left: 20px;
-                    @include breakpoint(brotherbear) { margin-left: 0;}
-
-                    input[type="text"], input[type="email"]{
-                        border: 0!important; border-radius: 0!important;
-                    }
-
-                    &.submit { 
-                        @include breakpoint(brotherbear) { justify-content: center; display: flex;}
-                    }
-                }
-
-                input[type="text"],
-                input[type="email"] { background: $white; padding: 20px; border-radius: 3px; border: none; font-family: $primaryFont; font-size: 16px; min-width: 280px; color: $primary; border: 0;
-                    @include breakpoint(grandpabear) { min-width: 240px;}
-                    @include breakpoint(brotherbear) { margin-bottom: 10px; width: 100%;}
-
-                    &::-webkit-input-placeholder { color: $text; transition: all .4s ease;}
-                    &::-moz-placeholder { color: $text; transition: all .4s ease;}
-                    &:-ms-input-placeholder { color: $text; transition: all .4s ease;}
-                    &:-moz-placeholder { color: $text; transition: all .4s ease;}
-
-                    &:focus {
-                        &::-webkit-input-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
-                        &::-moz-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
-                        &:-ms-input-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
-                        &:-moz-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
-                    }
-                }
-
-                button { flex-grow: 1; background: $white; border: none; cursor: pointer; text-align: center; position: relative; font-size: 16px; font-weight: 800; color: $primary; padding: 20px 25px; font-family:$primaryFont; transition:all .3s ease; max-width: 165px; height: 100%; text-transform: uppercase; white-space: nowrap;
-
-                    &:hover { background:lighten($secondary, 3%); transition:all .3s ease;}
-                    
-                    @include breakpoint(brotherbear) { padding: 15px 20px; align-self: center;}
-                    @include breakpoint(mamabear) { width: 100%; max-width: 100%;}
-                }
-
-                &.gdpr { text-align: right; padding-top: 20px;
-                    @include breakpoint(grandpabear) { text-align: center; justify-content: center;}
-
-                    small { font-size: 14px; line-height: 20px; color: rgba(white, 0.5);}
-                }
-            }
-        }
-    }
-}
-
 /* Footer */
 footer { padding: 0; position: relative;
 
@@ -594,7 +517,11 @@ footer { padding: 0; position: relative;
                     li { list-style:none; padding-bottom:10px; color: $white; display: flex; font-size: 14px;
                         @include breakpoint(papabear) { padding-bottom:10px;}
 
-                        i { font-size: 24px; color: $secondary; width: 22px; display: flex; justify-content: center; margin: 0px 15px 0 0;}
+                        i { font-size: 24px; color: $white; width: 22px; display: flex; justify-content: center; margin: 0px 15px 0 0;
+                            &:hover{
+                                color: $secondary;
+                            }
+                        }
 
                         img { width: 140px; margin-right: 10px;}
 
@@ -636,7 +563,7 @@ footer { padding: 0; position: relative;
         .subfooter__credits { display:flex; flex-direction: column; text-align: center; align-items: center;
 
             img{
-                width: 150px; margin-bottom: 20px;
+                width: 88px; margin-bottom: 20px;
             }
             
             p { font-size:14px; line-height:20px; color: $text;

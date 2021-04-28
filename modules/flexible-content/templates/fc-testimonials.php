@@ -40,7 +40,7 @@ while($testimonials->have_posts()) : $testimonials->the_post();
         $test_img = vt_resize($attachment_id,'' , 200, 200, true);
         $test_img_output = $test_img['url'];
     } else {
-        $test_img_output = 'https://www.northfields.co.uk/wp-content/uploads/2020/09/Northfields-icon-new-96.png';
+        $test_img_output = 'http://david-hillel.twsbeta3.co.uk/wp-content/uploads/2021/04/optician-test-chart-scaled-200x200.jpg';
     }
 
     // Align

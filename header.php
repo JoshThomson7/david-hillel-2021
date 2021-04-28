@@ -40,9 +40,8 @@
                     <div class="header__cta">
 
                         <ul class="contact">
-                            <li class="image"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/hmb_logo_small.jpg" alt="<?php bloginfo('name'); ?>"></li>
-                            <li><i class="fal fa-tint"></i></i><a href="#">Need milk?</a></li>
-                            <li><i class="fal fa-hand-holding-heart"></i></i><a href="#">Donate milk</a></li>
+                            <li><i class="fa fa-phone"></i><a href="tel:02084442233">020 8444 2233</a></li>
+                            <li><i class="fa fa-envelope"></i><a href="mailto:snrub@talktalk.net">Email Us</a></li>
                         </ul>
 
                         <div class="header__menu">

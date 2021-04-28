@@ -12,7 +12,7 @@ include('modules/wp-search-acf.php');
 // Modules
 include('modules/dashboard/dashboard-functions.php');
 include('modules/flexible-content/functions/fc-functions.php');
-include('modules/gravity-forms/functions/gf-functions.php');
+// include('modules/gravity-forms/functions/gf-functions.php');
 include('modules/blog/functions/blog-functions.php');
 
 include('modules/off-canvas-nav/functions/oc-functions.php');

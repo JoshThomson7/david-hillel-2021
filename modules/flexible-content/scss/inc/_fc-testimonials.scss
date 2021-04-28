@@ -9,7 +9,7 @@
         article { padding-bottom:30px; margin-bottom:30px; border-bottom:1px solid $lightgrey; display: flex; flex-wrap: wrap; align-items: center;
 
             .test_img{
-                width: 20%; padding-right: 20px;
+                width: 20%; margin: 0 auto;
                 @include breakpoint(cousinbear){
                     display: none;
                 }
@@ -18,7 +18,7 @@
             }
 
             .test_content{
-                display: flex; flex-wrap: wrap; width: 80%;
+                display: flex; flex-wrap: wrap; width: 100%;
                 @include breakpoint(cousinbear){
                     width: 100%;
                 }
@@ -74,11 +74,13 @@
             article { width: percentage(1/3); flex:1 0 auto; padding: 0 25px; margin-bottom: 0; border-bottom: none; display: block;
                 .testimonial__meta { flex-direction: column; flex: auto; width: 100%;
                     h3 { display: none;}
-                    .stars {}
+                    .stars {
+                        padding-top: 10px;
+                    }
                 }
 
-                .testim__content { width: 100%; text-align: center; min-height: 152px; height: 100%; display: flex; flex-direction: column;
-                    h5 { margin:auto 0 0;}
+                .testim__content { width: 100%; text-align: center; height: 100%; display: flex; flex-direction: column;
+                    // h5 { margin:auto 0 0;}
                 }
             }
         }

@@ -19,7 +19,7 @@
             p { font-size: 18px; padding-top: 20px; margin: 0; color: #fff;}
         }
 
-        a { font-size: 22px; font-weight: 700; padding: 15px 50px; position: relative; z-index: 2; background: $secondary; color: $primary; transition:all .4s ease; margin-top: 0; align-self: auto;
+        a { font-size: 22px; font-weight: 700; padding: 15px 50px; position: relative; z-index: 2; background: $secondary; color: $white; transition:all .4s ease; margin-top: 0; align-self: auto;
             @include breakpoint(mamabear) { font-size: 18px;}
 
             &:hover { background: lighten($secondary, 5%); transition:all .4s ease;}
