@@ -1,0 +1,70 @@
+/*
+	Custom Login
+	Description: Style the WordPress Login page
+*/
+
+html {
+
+	body.login {
+        min-height:600px;
+        display: flex;
+        box-sizing:border-box;
+		
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$secondary+0,082d35+100 */
+		background: $secondary; /* Old browsers */
+		background: -moz-linear-gradient(-45deg, $secondary 0%, darken($secondary, 20%) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(-45deg, $secondary 0%,darken($secondary, 20%) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(135deg, $secondary 0%,darken($secondary, 20%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+
+	.login {
+
+		/* Logo */
+		h1 { padding:20px 0;
+			a { background:url(img/logo.png) no-repeat scroll 0 0 transparent; background-size: 125px auto; display:block; margin:0 auto; width: 125px; padding:0; height: 125px;}
+		}
+
+		/* Error Message */
+
+		#login_error { margin:0 20px 20px !important; background: tomato !important; color:#fff; box-shadow:none!important; border: none;
+			a { color:#fff;}
+		}
+
+		/* Other message */
+		p {
+			&.message { margin:0 20px 20px; background: #86d81b !important; color:#fff; box-shadow:none!important; border: none;}
+		}
+
+		#nav { color: $text !important; float:right; margin:0; padding:0 20px 20px 0; opacity:0.7;
+			a { color: $text !important; text-decoration:none !important;
+				&:hover { color: $text !important; text-decoration:underline !important;}
+			}
+		}
+
+
+
+		#login { margin: auto; background: #fff; padding:0; min-width: 425px !important; overflow:hidden; border-radius: 4px; box-shadow: 0 5px 15px rgba(black, 0.2);}
+
+		#backtoblog { float:left; margin:0; padding:0 0 20px 20px; opacity:0.7;
+			a { color: $text !important; text-decoration:none;
+				&:hover { color: $text !important; text-decoration:underline;}
+			}
+		}
+
+		form { background:none; padding:0 24px 26px; margin-top:0; -webkit-box-shadow:none; box-shadow:none; border: none;
+			label { color: $text; position:relative; content:""; display: block;}
+
+			input[type="text"],
+			input[type="password"] { background: $lightgrey; border:none; border-bottom:1px solid #fff; -webkit-box-shadow:none; box-shadow:none; color: $text; padding: 15px 10px; margin-top: 5px; font-size: 16px;}
+
+			label[for="user_login"]:before { content:"\f110"; font-family:dashicons; font-size:20px; position:relative; top:4px; margin-right:7px;}
+			label[for="user_pass"]:before { content:"\f160"; font-family:dashicons; font-size:20px; position:relative; top:4px; margin-right:7px;}
+
+            p.submit { display: flex; justify-content: flex-end;
+    			#wp-submit { font-size:18px; font-weight:600; padding:10px 40px; color:#fff; text-decoration:none; border-radius:0; background:$primary; border:none; cursor:pointer; text-shadow:none; margin-top:15px; height:auto; box-shadow:none !important; border-radius: 4px;}
+            }
+		}
+	}
+
+	.forgetmenot { display:none;}
+}

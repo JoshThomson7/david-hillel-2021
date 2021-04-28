@@ -1,0 +1,20 @@
+/*
+*	APF Branches
+*
+*	@package Advanced Property Framework
+*	@version 1.0
+*/
+
+@import './inc/apf-branches-loop';
+@import './inc/apf-branches-map';
+
+body { 
+    &.apf__branch__single { 
+        .banners {
+            .banner { padding: 40px 0; min-height: 225px;
+                &.medium-banner { min-height: 1px !important;}
+            }
+        }
+    }
+}
+

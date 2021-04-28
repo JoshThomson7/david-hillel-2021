@@ -1,0 +1,45 @@
+/*
+*	Advanced Slide Menu
+*
+*	@package Advanced New Homes
+*	@version 1.0
+*/
+
+.asm { position:relative; overflow:hidden; min-height:200px;
+    ul { position:relative; width:100%;
+        li { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px $lightgrey solid; transition: all .3s ease;
+
+            &.asm__parent__page { border-bottom:none;
+                h4 { font-weight:normal; color:#888;}
+            }
+
+            a { font-size: 18px; padding:10px 0 10px 10px; color: $primary; display:block; flex:1 0 auto;
+                &:hover { color: $secondary;}
+            }
+
+            &.asm__back {
+                a { font-size: 16px; color: $primary;
+                    &:before { font-family: "Ionicons"; content: "\f124"; font-size: 16px; margin-right: 10px;}
+                }
+            }
+
+            &.active {
+                &> a { color:$primary;}
+            }
+
+            &> i.asm__subnav__arrow { display: block; padding:15px 20px; cursor: pointer;
+                &:before { font-family: "Font Awesome 5 Pro"; content: "\f054"; font-size: 18px;}
+
+                &:hover {
+                    &:before { color: $primary;}
+                }
+            }
+
+            &.fade-out { opacity: 0; visibility: hidden; transition: all .3s ease;}
+        }
+
+        &.sub-menu { position: absolute; top: 0; left:0; right: 0; transform: translate3d(100%, 0, 0); transition: all .3s ease; background: #fff; height: 100%;
+            &.current-menu { transform: translate3d(0, 0, 0); transition: all .3s ease;}
+        }
+    }
+}

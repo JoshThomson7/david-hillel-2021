@@ -1,0 +1,352 @@
+{
+    "key": "group_57599bfa48c72",
+    "title": "Page Options",
+    "fields": [
+        {
+            "key": "field_57599c8539380",
+            "label": "Banner",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_580dffb3c227d",
+            "label": "Banner Type",
+            "name": "page_banner_type",
+            "type": "button_group",
+            "instructions": "Choose the type of banner you want to display on this page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "standard": "Standard",
+                "video": "Video"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_58efa063e92ab",
+            "label": "Heading",
+            "name": "page_heading",
+            "type": "text",
+            "instructions": "Replaces the main page title with your own.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_581b36551036e",
+            "label": "Caption",
+            "name": "page_caption",
+            "type": "textarea",
+            "instructions": "Enter here a caption.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_57599c2d9f731",
+            "label": "Overlay Opacity",
+            "name": "page_banner_overlay_opacity",
+            "type": "select",
+            "instructions": "Select the level of transparency.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0": "0%",
+                "10": "10%",
+                "20": "20%",
+                "30": "30%",
+                "40": "40%",
+                "50": "50%",
+                "60": "60%",
+                "70": "70%",
+                "80": "80%",
+                "90": "90%",
+                "100": "100%"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_580dffea99226",
+            "label": "Image",
+            "name": "page_banner",
+            "type": "image",
+            "instructions": "Upload an image.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_580dffb3c227d",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_580e000199227",
+            "label": "Video ID",
+            "name": "page_banner_video_id",
+            "type": "text",
+            "instructions": "Paste here the YouTube video ID. It's the last bit on the YouTube video URL.<br \/>\r\nExample: https:\/\/www.youtube.com\/watch?v=<strong>Scxs7L0vhZ4<\/strong>.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_580dffb3c227d",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_580e002999228",
+            "label": "Mobile",
+            "name": "page_banner_video_mobile_alt",
+            "type": "image",
+            "instructions": "Due to the nature of mobile phones, videos do not autoplay as they do in desktop view. For this reason, we need to have an alternative image for mobile view.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_580dffb3c227d",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5ba4ca118977d",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ba4ca6f89781",
+            "label": "Hide Logos",
+            "name": "page_footer_hide_logos",
+            "type": "true_false",
+            "instructions": "Set to Yes to hide the footer logos on this page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e26f17ffce58",
+            "label": "Search",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5e26f187fce59",
+            "label": "Show property search",
+            "name": "page_show_property_search",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e26f19bfce5a",
+            "label": "Default to",
+            "name": "page_property_search_default",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e26f187fce59",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "for-sale": "Sales",
+                "to-let": "Lettings"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "2"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "landing.php"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1593778635
+}

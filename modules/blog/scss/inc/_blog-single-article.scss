@@ -1,0 +1,26 @@
+.blog__post { margin: 0 0 20px; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -4px rgba(0, 0, 0, 0.2); box-sizing: border-box; border-radius: 5px; overflow: hidden;
+
+    a { display:block; height: 150px; display: flex;
+        @include breakpoint(mobile){ flex-wrap: wrap;}
+
+        .blog__post__img { height: 100%; width: 30%; min-width: 200px; background-position: center; background-size: cover !important; background-repeat: no-repeat;
+            @include breakpoint(mobile){ min-width: 100%;}
+        }
+        
+        .blog__post__content{ height: 100%; padding: 20px 10px; box-sizing: border-box;
+
+            h5 {  font-size:0.95rem; color:$primary; padding-bottom: 10px; margin:0; 
+                span { font-size:0.7rem; padding-top: 10px; color:lighten($text,5%); display:block;}
+            }
+
+            p { font-size:0.8rem; color:$text; line-height:18px; margin:0;
+            }
+        }
+
+    }
+
+    &:hover { background:none; 
+        h5 { color:$primary; 
+    }
+}
+}

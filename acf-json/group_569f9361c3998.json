@@ -1,0 +1,168 @@
+{
+    "key": "group_569f9361c3998",
+    "title": "Testimonials",
+    "fields": [
+        {
+            "key": "field_56f3bc1a24c85",
+            "label": "Video ID",
+            "name": "testim_video_id",
+            "type": "text",
+            "instructions": "Paste a YouTube video ID if you want to add a video.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56f3be987a565",
+            "label": "Video Position",
+            "name": "testim_video_position",
+            "type": "radio",
+            "instructions": "Choose where you want the video to appear.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "right": "Right"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "allow_null": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_569f937be8fa3",
+            "label": "Quote",
+            "name": "testim_quote",
+            "type": "textarea",
+            "instructions": "What they said.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_569f938fe8fa4",
+            "label": "Name",
+            "name": "testim_name",
+            "type": "text",
+            "instructions": "The name of the person who wrote it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_569f93b7e8fa5",
+            "label": "Additional",
+            "name": "testim_additional",
+            "type": "text",
+            "instructions": "Any other info like \"happy client\", \"CEO of Apple\", etc.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_569f9468edf51",
+            "label": "Rating",
+            "name": "testim_rating",
+            "type": "radio",
+            "instructions": "Select the number of stars.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "<span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span>",
+                "2": "<span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span><span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span>",
+                "3": "<span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span><span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span><span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span>",
+                "4": "<span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span><span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span><span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span><span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span>",
+                "5": "<span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span><span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span><span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span><span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span><span class=\"dashicons-before dashicons-star-filled\" style=\"color:#0073aa;\"><\/span>"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": 5,
+            "layout": "horizontal",
+            "allow_null": 0,
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonial"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1593772709
+}

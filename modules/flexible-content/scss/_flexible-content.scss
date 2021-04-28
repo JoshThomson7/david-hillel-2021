@@ -1,0 +1,97 @@
+/*
+--------------------------------------------------------------------------------
+    ________          _ __    __        ______            __             __
+   / ____/ /__  _  __(_) /_  / /__     / ____/___  ____  / /____  ____  / /_
+  / /_  / / _ \| |/_/ / __ \/ / _ \   / /   / __ \/ __ \/ __/ _ \/ __ \/ __/
+ / __/ / /  __/>  </ / /_/ / /  __/  / /___/ /_/ / / / / /_/  __/ / / / /_
+/_/   /_/\___/_/|_/_/_.___/_/\___/   \____/\____/_/ /_/\__/\___/_/ /_/\__/
+
+--------------------------------------------------------------------------------
+Flexible Content
+*/
+
+@import 'fc-tab-scrollbar';
+
+.flexible__content { z-index: 999;
+
+    @import 'fc-global';
+
+    @import 'inc/fc-general-text';
+
+    // Buttons
+    @import 'inc/fc-buttons';
+
+    // Free Text
+    @import 'inc/fc-free-text';
+
+    // Feature
+    @import 'inc/fc-feature';
+
+    // Icon Grid
+    @import 'inc/fc-icon-grid';
+
+    // Grid Links
+    @import 'inc/fc-grid-links';
+
+    // Accordion
+    @import 'inc/fc-accordion';
+
+    // Tabs
+    @import 'inc/fc-tabs';
+
+    // Gallery
+    @import 'inc/fc-gallery';
+
+    // Table
+    @import 'inc/fc-table';
+
+    // Video
+    @import 'inc/fc-video';
+
+    // Carousel
+    @import 'inc/fc-carousel';
+
+    // Team
+    @import 'inc/fc-team';
+    @import 'inc/fc-team-popup';
+
+    // 2 Column Boxes
+    @import 'inc/fc-column-boxes';
+
+    // Timeline
+    @import 'inc/fc-timeline';
+
+    // Call to action
+    @import 'inc/fc-call-to-action';
+
+    // Grid Boxes
+    @import 'inc/fc-grid-boxes';
+
+    // Grid Boxes
+    @import 'inc/fc-testimonials';
+
+    // Contact
+    @import 'inc/fc-contact';
+
+    // Feature Boxes
+    @import 'inc/fc-feature-boxes';
+
+    // Feature Boxes Persona
+    @import 'inc/fc-feature-boxes-persona';
+
+    // Masonry
+    @import 'inc/fc-masonry';
+
+    // Circle Masonry
+    @import 'inc/fc-masonry-circles';
+
+    // Featured testimonials
+    @import 'inc/fc-featured-testimonials';
+
+    .aef .aef__listings { max-width: 850px; margin: 0 auto;}
+
+    .fc_properties { display:flex; flex-wrap:wrap; margin:0 10px; position:relative;
+        @import '../../advanced-property-framework/scss/inc/apf-loop';
+    }
+
+}

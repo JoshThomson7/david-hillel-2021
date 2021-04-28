@@ -1,0 +1,64 @@
+/*
+*	Blog Sidebar
+*
+*	Styles for the blog sidebar
+*
+*	@package Blog
+*	@version 1.0
+*/
+
+.blog__sidebar { padding-top: 20px; width:25%; box-sizing: border-box;
+
+	@include breakpoint(mobile) { width: 100%; padding-top: 0; }
+
+	article { padding:0 0 40px 20px; clear:both; width: 100%; height: auto; box-shadow: none; box-sizing: border-box;
+
+		.widget__heading { position:relative; padding-bottom:20px; display: flex; align-items: center;
+
+			.widget__icon { background: #AFC1CB;border-radius:100%; display: flex; align-items: center; justify-content: center; position:absolute; left:-66px; color:white; font-size:24px; line-height:49px; width:50px; height:50px; text-align:center;}
+
+			h3 { font-size:24px; font-weight:normal; color:$secondary; line-height:22px; letter-spacing:-0.5px; margin-bottom:0; padding-bottom:0;
+				span { font-size:16px; color:#AFC1CB; display:block;}
+			}
+
+		}
+
+		.widget__content {
+
+			ul { padding:0; margin:0;
+
+				li { list-style:none; padding-bottom:0; line-height:normal;
+
+					a { display:block; font-size:16px; border-bottom:1px solid $text; padding:10px; color:$text;
+						&:hover { color:$secondary;}
+					}
+
+					&.current_page_item a { color:$secondary; font-weight:600;}
+				}
+			}
+
+			.widget__box { margin-bottom:20px;
+
+				a { display:block; position:relative; overflow:hidden;
+
+					img { transition:all .5s ease; transform:scale(1);}
+
+					span { background:$primary; opacity:0.8; padding:10px; color:#fff; font-size:14px; font-weight:600; width:100%; position:absolute; bottom:0; left:0; z-index:10;}
+
+					&:hover {
+						span { background:$secondary;}
+						img { transition:all .5s ease; transform:scale(1.3);}
+					}
+				}
+			}
+		}
+
+		/* Blog */
+		.tagcloud {
+			a { font-size:12px !important; display:block; float:left; padding:5px 10px; color:#868896; border-radius:10px; border:1px solid $text; margin:0 3px 3px 0;
+				&:hover { color:$secondary; border:1px solid $secondary;}
+			}
+		}
+	}
+
+}

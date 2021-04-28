@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h1 id="advancedpropertyframework">Advanced Property Framework</h1>
+
+<p>Advanced Property Framework (a.k.a APF), is an estate agency website framework for WordPress.</p>
+
+<h2 id="gettigstarted">Gettig started</h2>
+
+<p>These instructions will get APF up and running. See pre-requisits section for dependencies needed to run this framework.</p>
+
+<h3 id="pre-requisites">Pre-requisites</h3>
+
+<ol>
+<li><a href="https://wordpress.org/download/">WordPress</a></li>
+<li><a href="https://www.advancedcustomfields.com/pro/">Advanced Custom Fields PRO</a>.</li>
+<li><a href="http://www.wpallimport.com/">WP All Import</a></li>
+<li><a href="https://codekitapp.com/">CodeKit</a></li>
+</ol>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="sessionsincludesvariablestemplates">Sessions, includes, variables &amp; templates</h3>
+
+<ol>
+<li><p>Copy the <strong>advanced-property-framework</strong> folder into the theme&#8217;s folder.</p></li>
+<li><p>Open <code>header.php</code> and add the function <code>&lt;?php apf_sessions(); ?&gt;</code> at the very top of the document, even before <code>&lt;!DOCTYPE html&gt;</code>. This will output all the necessary <code>$_SESSION</code> variables that make the property search work.</p></li>
+<li><p>While on <code>header.php</code>, add the code below before <code>&lt;?php wp_head(); ?&gt;</code>. This outputs all the necessary Javascript variables used on the search form and property pages.
+<code>
+&lt;script&gt;
+    &lt;?php apf_property_js_vars(); ?&gt;
+&lt;/script&gt;
+</code>
+The function <a href="https://github.com/fl1digital/x1-lettings/blob/master/modules/advanced-property-framework/functions/inc/apf-property-js-vars.php"><code>apf_property_js_vars()</code></a> can be found in <code>advanced-property-framework/functions/inc/apf-property-js-vars.php</code>.</p></li>
+<li><p>Create a file called <code>property-search.php</code> and include the search results template within <code>advanced-property-framework/templates</code>. Something like this:
+```
+&lt;?php
+/*
+ Template name: Property Search
+*/</p>
+
+<p>// APF Template
+require_once(&#8216;modules/advanced-property-framework/templates/apf-search-results-combined.php&#8217;);</p>
+
+<p>?&gt;
+```</p>
+
+<p>You can choose a different type of template depedning on the layout you want.</p></li>
+<li><p>Create a page in WordPress called <strong>Property Search</strong> and assign the template above to it.</p></li>
+<li><p>Create a file called <code>property-xml.php</code> and add the following code:</p>
+
+<pre><code>&lt;?php
+/*
+    Template name: Property XML
+*/
+
+// APF XML
+require_once('modules/advanced-property-framework/templates/apf-xml.php');
+?&gt;
+</code></pre></li>
+<li><p>Create a page in WordPress called <strong>XML</strong> and make <strong>Property Search</strong> its parent – this is so the URL looks like: <code>http://estateagent.com/property-search/xml/</code>. Assign the <strong>Property Search</strong> template above to this page.</p></li>
+<li><p>You can include the Search Form anywhere in your markup like this:</p>
+
+<p><code>require_once('modules/advanced-property-framework/templates/apf-search-form.php');</code></p></li>
+<li><p>Include the APF javascript on your custom.js file:</p>
+
+<p><code>// @codekit-prepend &quot;../modules/advanced-property-framework/js/_apf.js&quot;;</code></p></li>
+<li><p>Include the APF stylesheet on your style-base.scss file:</p>
+
+<p><code>@import '../modules/advanced-property-framework/scss/_apf';</code></p></li>
+</ol>
+
+<h2 id="builtwith">Built with</h2>
+
+<ul>
+<li><a href="https://www.sublimetext.com/">Sublime Text</a></li>
+<li><a href="https://codekitapp.com/">CodeKit</a></li>
+<li><a href="https://wordpress.org/download/">WordPress</a></li>
+</ul>
+
+</body>
+</html>

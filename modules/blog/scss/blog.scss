@@ -1,0 +1,80 @@
+/*
+*	Blog Module Styles
+*
+*	Styles for the blog and its templates
+*
+*	@package Blog
+*	@version 1.0
+*/
+
+@import '../../../scss/inc/vars';
+@import '../../../scss/inc/mixins';
+
+body.blog{
+
+	
+	@import 'inc/blog-results';
+	@import 'inc/_blog-featured';
+	@import 'inc/blog-single-article';
+	@import 'inc/blog-sidebar';
+	@import 'inc/blog-single';
+
+	.blog__title{ margin: 30px 0 15px;
+		h2{ font-size: 34px; color: $primary; padding-bottom: 15px;}
+	}
+
+	header.header { border-bottom: 1px $border solid;}
+	
+	.blog__wrapper { padding:0; display:flex; flex-wrap:wrap; justify-content: space-between; overflow: auto; padding-top: 90px;
+		@include breakpoint(brotherbear){padding-top: 30px;}
+
+		.max__width{
+
+			.blog__single__wrapper{
+				display: flex; justify-content: space-between;
+				@include breakpoint(brotherbear){flex-direction: column;}
+
+				.blog__single__content{
+					width: 70%; padding-top: 30px;
+					@include breakpoint(brotherbear){width: 100%;}
+				}
+
+				.blog__sidebar{
+					@include breakpoint(brotherbear){width: 100%; padding: 50px;}
+				}
+			}
+		}
+	}
+
+
+	&__single{
+		@import 'inc/_blog-single';
+	}
+
+	&__archive{ 
+		@import 'inc/_blog-sidebar';
+	}
+
+}
+
+.blog__home{
+	.blog__sidebar{
+		width: 100%!important;
+
+		.max__width{
+			display: flex;
+
+			@include breakpoint(papabear){
+				flex-direction: column;
+			}
+
+			article{
+				width: calc(100/3);
+
+				@include breakpoint(papabear){
+					width: 100%;
+				}
+			}
+		}
+	}
+}

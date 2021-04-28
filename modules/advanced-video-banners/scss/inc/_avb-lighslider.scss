@@ -1,0 +1,23 @@
+/**
+ * AVB LightSlider overrides
+ *
+ * @package advanced-video-banners/
+ * @version 1.0
+*/
+
+/* LightSlider overrides */
+.lSSlideOuter { position: relative; z-index: 2;
+    .lSPager { position:absolute; bottom:165px; left:0; z-index:10; padding: 0 calc((100vw - 1375px) / 2); width: 100%; display: flex; justify-content: flex-end;
+        &.lSpg {
+            &>li { padding:0 2px;
+                a { border: 2px solid #fff; width:16px; height:16px; background:none;}
+
+                &.active a { background: $secondary; border: 2px $secondary solid;}
+            }
+        }
+    }
+
+    .lSAction {
+        a { background:none !important;}
+    }
+}

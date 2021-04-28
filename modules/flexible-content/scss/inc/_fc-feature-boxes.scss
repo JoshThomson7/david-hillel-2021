@@ -1,0 +1,51 @@
+/*
+    Feature
+*/
+.fc_feature_boxes_wrapper { display: flex; justify-content: center; flex-wrap: wrap; margin: 0 10px 0;
+    @include breakpoint(brotherbear) { flex-direction: column; margin: 0 -20px;}
+
+    article { width: percentage(1/3); transition: all .3s ease; display: flex; flex-direction: column;
+
+        @include breakpoint(brotherbear) { width: 100%;}
+
+        // variants
+        &.full__width { width: 100%;}
+        &.one__half { width: percentage(1/2);
+            @include breakpoint(brotherbear) { width: 100%;}
+        }
+        &.one__third { width: percentage(1/3);
+            @include breakpoint(brotherbear) { width: 100%;}
+        }
+        &.one__fourth { width: percentage(1/4);
+            @include breakpoint(brotherbear) { width: 100%;}
+        }
+
+        .fc__feature__box__inner { background: #fff; box-shadow: 0 5px 20px rgba(black, 0.1); border-radius: 4px; padding: 25px; display: flex; flex-direction: column; margin: 10px; transition: all .3s ease; transform: scale3d(1, 1, 1); flex: 1; display: flex; flex-direction: column;
+
+            h3 { font-size: 32px; color: $primary; font-weight: 400; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;
+                a { color: $primary;
+                    &:hover { color: lighten($primary, 20%);}
+                }
+
+                figure {
+                    i { font-size: 50px; color: $secondary; transition: all .3s ease;}
+                }
+            }
+
+            p { font-size: 16px; color: $text; margin-bottom: 30px; font-weight: 500; line-height: 26px; margin-bottom: 20px;
+                strong { font-weight: 700;}
+            }
+
+            a.fom { font-size: 16px; font-weight: 800; color: $primary; display: flex; align-self: flex-end; margin-top: auto;
+                i { margin-left: 10px; position: relative; top: 1px;}
+
+                &:hover { color: lighten($primary, 20%);}
+            }
+        }
+
+        &.animate {
+            &:hover { transition: all .3s ease; transform: scale3d(1.03, 1.03, 1.03);}
+        }
+    }
+
+}

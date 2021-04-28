@@ -1,0 +1,222 @@
+/*
+* Team Archive CSS
+*/
+
+@import '../../../scss/inc/mixins';
+@import '../../../scss/inc/vars';
+
+//Libs
+@import '../../../lib/select2/css/select2';
+
+section.team__filters{ 
+
+    .team__search__form{  display:flex; align-items:center; justify-content: center; box-sizing: border-box; padding: 20px 10px 15px; 
+        @include breakpoint(mamabear) { flex-direction: column-reverse; width: 100%;}
+
+        input[type="text"]{ 
+            font-family:$primaryFont; 
+            border: 1px solid $border; 
+            padding:16px 50px 13px 15px;
+            font-size:16px; 
+            font-weight: 300;
+            color: darken($text, 10%); 
+            cursor:pointer;
+            margin-right:20px;
+            border-radius: 3px; 
+            font-weight: 600; 
+            background: #fff;
+            transition: .2s ease-out all;
+            min-width: 300px;
+
+            &::placeholder{
+                opacity: 0.8;
+                color: darken($text, 10%); 
+            }
+
+            &:focus{
+                border-color: darken($border, 5%);
+                transition: .2s ease-in all;
+            }
+
+        }
+
+        .select2-container{ 
+            padding: 0;
+            font-family:$primaryFont; 
+            border: 1px solid $border; 
+            font-size:16px; 
+            font-weight: 300;
+            color: darken($text, 10%); 
+            cursor:pointer;
+            margin-right:20px;
+            border-radius: 3px; 
+            font-weight: 600; 
+            background: #fff;
+            transition: .2s ease-out all;
+            min-width: 300px;
+            min-height: 52px;
+            background:url('../../../gravity-forms/img/select-arrow-down.png') no-repeat right center #fff; 
+            background-position-x:100%; 
+            background-size:21px;
+
+            input[type="search"]{
+
+                color: darken($text, 10%); 
+
+                &::placeholder{
+                    opacity: 0.8;
+                    color: darken($text, 10%); 
+                }
+
+                &:focus{
+                    border-color: darken($border, 5%);
+                    transition: .2s ease-in all;
+                }
+            }
+            .select2-selection--single,
+            .select2-selection--multiple{ 
+                border: 0;
+                border-radius: 0;
+                background-color: transparent;
+
+                .select2-selection__rendered{ 
+                        padding: 11px 50px 11px 10px;
+                        margin: 0;
+                        display: block;
+                }
+                
+                .select2-selection__choice{ 
+                    background-color: $lightgrey;
+                    border-color: $border;
+                }
+
+                .select2-selection__arrow { display: none;}
+            }
+
+            .select2-search__field{ 
+                margin: 0; 
+                height: auto; 
+                padding: 0; 
+                font-family: $primaryFont;
+                font-weight: 600; 
+            }
+
+
+        }
+        
+
+        .input__search__text{ position: relative; margin-right: 20px;
+
+            input{ padding-right: 40px; margin-right: 0;
+                
+                // &:hover + span, &:focus + span{
+                //     color: lighten($primary, 5%);
+                //     transform: .2s ease-in all;
+                // }
+            }
+            span{ position: absolute; right: 10px; top: calc(50% - 9px); font-size: 18px; color: $primary;}
+
+        }
+
+      
+        label { color:$text; cursor: pointer; font-size: 14px; font-weight: 600;
+            @include breakpoint(papabear) { font-size:13px;}
+            @include breakpoint(brotherbear) { font-size:initial;}
+            @include breakpoint(mamabear) { width:100%; text-align: center; padding-top: 10px;}
+        }
+
+    }
+
+    .team__results{ display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; column-gap: 10px; row-gap: 1em; box-sizing: border-box; padding: 40px 30px;  position: relative;
+        @include breakpoint(cousinbear){grid-template-columns: 1fr 1fr 1fr;}
+        @include breakpoint(teenbear){grid-template-columns: 1fr 1fr;}
+        @include breakpoint(babybear){grid-template-columns: 1fr;}
+
+        .loading-overlay { position: absolute; width: 100%; height: 100%; top: 0; left: 0; display: flex; justify-content: center; align-items: center; z-index: 6; background: rgba($text, 0.5);
+            #spinner { width: 40px; height: 18px; transform: scale(2);
+                path { fill: $primary;}
+            }
+        } 
+
+
+        .masonry__item__wrapper {
+
+            .team__wrap { display:flex; flex-wrap:wrap;
+
+                article {
+                    //height: 350px;
+        
+                    //@include breakpoint(mamabear) { width:percentage(1/2);}
+        
+                    a { display:block; position:relative; border-radius: 5px; box-shadow: 0px 1px 7px rgba(0,0,0,0.1); border-radius: 5px; overflow: hidden; //height: 350px;
+                        .team__overlay { width:100%; height:100%; position:absolute; left:0; top:0; opacity:0; transition:opacity 1s ease; display:flex; flex-direction:column; justify-content:center; display: flex; justify-content: center; align-items: center; border-radius: 3px;
+        
+                            background: $primary;
+        
+                            &.member-join { background:$text; opacity:1;
+                                &:hover { opacity:1; background:$tertiary;}
+                                span.team-more { width:165px; background:#FFF; color:$text; padding:8px 20px;}
+                            }
+        
+                            span.team__more { padding:10px 0; color:$secondary; text-align:center; font-size: 22px; display:block; font-weight: 600;margin-bottom: 40px;
+                                @include breakpoint(teenbear){
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+        
+                    h5 { padding: 20px 0; text-align: center; margin-bottom: 0; font-size: 16px; font-weight: 600;position: absolute; bottom: 0px; width: 100%; background: rgba($lightgrey, 0.8); color: $primary; display: flex; align-items: center; justify-content: flex-start; line-height: 16px;
+                        @include breakpoint(teenbear){
+                            padding: 10px 0; font-size: 15px;
+                        }
+
+                        span { font-size: 16px; color: white; display: block; line-height: 16px; font-weight: 600;}
+        
+                        &:before{
+                            content: "";display: block;width: 2px;max-height: 60px;background: $primary;margin-right: 10px;height: 40px; margin-left: 20px;
+
+                            @include breakpoint(teenbear){
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+        
+                    img { width:100%; max-height: 400px; object-fit: cover;}
+        
+                    &:hover .team__overlay { opacity:0.9; transition:opacity .5s ease;}
+                }
+            }
+        }
+
+        .team__img { width: 140px; height: 140px; border-radius: 100%; background-size: 100%; background-repeat: no-repeat; background-position: top center; margin: -50px auto 0; box-shadow: 0 -5px 12px 0px rgba(black, 0.05); display: block; transition:all .4s ease; opacity: 1; background-color:#e3ece5;
+            &:hover { opacity: 0.8; transition:all .4s ease;}
+
+            @include breakpoint(mamabear) { margin-top: -20px;}
+        }
+
+        .team__content { padding: 20px 10px 0; text-align: center; width: 100%;
+            h5 { font-size: 1.05rem; color: $white; text-transform: uppercase; margin-bottom: 5px; line-height: normal; font-weight: 500;}
+            h2 { font-size: 1.2rem; color: $secondary; margin-bottom: 20px; line-height: normal; font-weight: 600;
+                a { color: $primary;
+                    &:hover { color: $primary;}
+                }
+            }
+            p { font-size: 0.85rem; color: $white; line-height: 1.5; padding: 0 20px 20px; width: 100%; margin-bottom: 0;}
+
+            .button{ border-radius: 96px; margin-bottom: 20px; display: inline-block; font-weight: 800; padding: 15px 20px; }
+        }
+
+
+        
+        .not__found { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 0; height: 100%; grid-column: span 3;
+        
+
+            figure {
+                i { font-size: 65px; color: $border; margin-bottom: 20px;}
+            }
+            h3 { font-size: 16px; color: $primary; font-weight: 700; margin-bottom: 5px;}
+            p { margin: 0 0 10px; font-size: 13px;}
+        }
+    }
+}

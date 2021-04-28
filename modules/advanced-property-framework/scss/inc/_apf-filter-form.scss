@@ -1,0 +1,134 @@
+/*
+*	Filter form
+*
+*	Styles for the search results filter
+*
+*	@package Advanced Property Framework
+*	@version 1.0
+*/
+
+.apf__results__filter { display:flex; justify-content:space-between; align-items: center; padding: 10px 5px; border-top: 1px $border solid; border-bottom: 1px $border solid; flex: 1; margin-top: 5px;
+
+	@include breakpoint(mamabear) { flex-direction:column; padding: 0 5px 10px;}
+
+	.apf__results__filter__view { display:flex;
+
+		@include breakpoint(mamabear) { border-bottom:1px solid darken($lightgrey, 5%); width: 100%;}
+
+        a,
+        label { display:block; margin-right:20px; cursor: pointer;
+
+			@include breakpoint(mamabear) { display:flex; justify-content:center; width:100%; margin-right:0; border-right:1px solid darken($lightgrey, 5%); padding:10px 0;
+				&:last-of-type { border-right:none;}
+			}
+
+            &.apf__map__hide {
+                @include breakpoint(brotherbear) { display: none;}
+            }
+
+			i { font-size: 24px; color: darken($lightgrey, 20%);
+				&.fa-th{
+					width: 24px; height: 24px;	
+				
+					&:hover{
+						display: flex; flex-direction: column; align-items: center; margin-bottom: -22px; margin-left: 0px;
+
+						&::after{
+							content: "Grid"; font-size: 13px; background: $primary; padding: 5px 10px; color: white; position: relative; bottom: -10px; font-family: $primaryFont; border-radius: 5px;
+						}
+					}
+				}
+
+				&.fa-list{
+					width: 24px; height: 24px;	
+				
+					&:hover{
+						display: flex; flex-direction: column; align-items: center; margin-bottom: -22px; margin-left: 0px;
+
+						&::after{
+							content: "List"; font-size: 13px; background: $primary; padding: 5px 10px; color: white; position: relative; bottom: -10px; font-family: $primaryFont; border-radius: 5px;
+						}
+					}
+				}
+
+				&.fa-map{
+					width: 27px; height: 24px;	
+				
+					&:hover{
+						display: flex; flex-direction: column; align-items: center; margin-bottom: -22px; margin-left: 0px;
+
+						&::after{
+							content: "Map"; font-size: 13px; background: $primary; padding: 5px 10px; color: white; position: relative; bottom: -10px; font-family: $primaryFont; border-radius: 5px;
+						}
+					}
+				}
+			}
+
+            &[for="apf_view_map"] { 
+                @include breakpoint(brotherbear) { display: none;}
+            }
+
+			&.active {
+				i { color: $primary;}
+			}
+
+            &.apf-mobile-search { display: none;
+                @include breakpoint(brotherbear) { display: flex;}
+            }
+
+        }
+        
+        input[type="checkbox"],
+        input[type="radio"] { display:none;
+            &:checked + label i { color: $primary;}
+        }
+
+	}
+
+	.apf__results__filter__sort { display:flex; align-items: center; justify-content: flex-end;
+		@include breakpoint(mamabear) { width: 100%; margin-top: 10px;}
+		@include breakpoint(teenbear) { flex-wrap: wrap;}
+        
+		article { padding: 0 10px;
+			@include breakpoint(teenbear) { padding: 20px 10px; width: 50%;}
+			@include breakpoint(sisterbear) { padding: 10px; width: 100%;}
+		}
+
+		form { display:flex; align-items:center;
+			@include breakpoint(mamabear) { flex-direction: column-reverse; width: 100%;}
+		}
+
+		label { color:$text; cursor: pointer; font-size: 16px; font-weight: 600;
+			@include breakpoint(papabear) { font-size:13px;}
+			@include breakpoint(brotherbear) { font-size:initial;}
+			@include breakpoint(mamabear) { width:100%; text-align: center; padding-top: 10px;}
+		}
+
+		input[type="checkbox"] { display:none;
+
+			+ label:before {
+				font-family: 'Font Awesome 5 Pro';
+			 	display: inline-block;
+			}
+
+			+ label:before { content: "\f058"; font-weight: 500;}
+			+ label:before { letter-spacing:5px; font-size:22px; position:relative; top:2px;}
+
+			&:checked + label { color:$primary;}
+			&:checked + label:before { content: "\f058"; color:$secondary; font-weight: 800;}
+			&:checked + label:before { letter-spacing:5px; font-size:22px; position:relative; top:2px;}
+
+		}
+
+		select { font-family:$primaryFont; border:none; padding:16px 50px 13px 15px; font-size:16px; color:$text; background:url('../../img/select-arrow-down.png') no-repeat right center darken($lightgrey, 5%); background-position-x:100%; background-size:21px; cursor:pointer; border-radius:0; margin-left:20px; border-radius: 3px; font-weight: 600;
+
+			@include breakpoint(papabear) { font-size:14px; padding:16px 30px 13px 15px;}
+			@include breakpoint(brotherbear) { font-size:initial; width:100%;}
+			@include breakpoint(mamabear) { margin-left:0; padding:22px 30px 19px 15px; background-color:#fff; border-left:1px solid darken($lightgrey, 5%); border-right:1px solid darken($lightgrey, 5%); border-bottom:1px solid darken($lightgrey, 5%); border-top:1px solid darken($lightgrey, 5%); width: 50%;}
+			@include breakpoint(teenbear) { width:100%;}
+
+		}
+
+	}
+
+}

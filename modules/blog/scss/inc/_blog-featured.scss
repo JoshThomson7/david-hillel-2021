@@ -1,0 +1,69 @@
+.social__blogs {  padding:20px 0 0; width: 100%;
+	@include breakpoint(mamabear) { padding: 20px; box-sizing: border-box; }
+
+	.social__blog { background-size: cover; background-position:center; background-repeat:no-repeat; position:relative;
+
+		.social__blog__overlay { display:block; position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; background:none; transition: .6 ease all; 
+
+			@include breakpoint(mamabear) {
+				&:before { background:rgba($primary, 0.9);}
+			}
+
+			.caption { position:absolute; left:0; bottom:0; padding:20px 10px 0; z-index:2; width:100%; box-sizing: border-box;  background: rgba($white, 0.7); display: flex; align-items: center;
+
+				&__date { color:$primary; text-align:center; padding:10px 20px 0 0; margin-right:10px; border-right: 1px solid $primary; min-width: 80px;
+					
+					&__day { font-size:58px; font-weight:400;  margin-bottom: 10px; }
+					&__month { font-size:24px; font-weight:200; text-transform:uppercase;}
+					&__year{ font-size:20px; font-weight:200; text-transform:uppercase; }
+					
+				}
+
+				&__content { width:80%; float:left; padding:10px 0 20px 10px; line-height: 1.5;
+
+					h6 { font-size:0.85rem; color:darken($text,5%); padding-bottom:10px;
+						span { font-size:16px; position:relative; top:2px;}
+					}
+
+					h3 { font-size:1.3rem; font-weight: 600; line-height: 1.4; color:$primary; margin:0 0 10px; position:relative; padding:0;
+						span { font-size:16px; color:lighten($primary, 30%); position:absolute; right:0; top:5px}
+					}
+
+					p { font-size:0.8rem; color:lighten($primary,5%); line-height:1.5;}
+				}
+			}
+			&:hover {
+				&:before { background:rgba($primary, 0.9);}
+			}
+		}
+
+		&.big { width:percentage(730px / 1140px); height:456px; float:left;
+		
+			@include breakpoint(mamabear) { width:100%; float:none; height:218px; margin-bottom:20px;}
+
+		}
+
+		&.small { width:percentage(390px / 1140px); height:218px; margin-bottom:20px; float:right;
+			@include breakpoint(mamabear) { width:100%; float:none;}
+
+			.social__blog__overlay {
+				.caption { padding:10px 5px; display: flex;
+					@include breakpoint(mamabear) { padding: 10px; //background: rgba($primary, 0.8);
+					}
+
+					&__date { margin-right:15px;
+						&__day { font-size:35px; }
+						&__month { font-size:16px;}
+					}
+
+					&__content { padding:5px 0 10px 15px;
+						@include breakpoint(mamabear) { width:76%;}
+
+						h3 { font-size: 1rem; }
+					}
+				}
+			}
+		}
+	}
+}
+

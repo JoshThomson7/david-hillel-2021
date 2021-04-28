@@ -1,0 +1,68 @@
+.oc__nav__trigger { 
+    &.elevate { position: relative; z-index: 9999999}
+}
+
+.oc__nav { width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -999999; overflow: hidden; visibility: hidden; opacity: 0; transition: all .5s ease .4s;
+    
+    &__background { display: flex; width: 100%; height: 100%; position: absolute; z-index: 1;
+        @include breakpoint(brotherbear) { display: none;}
+
+        figure { width: 50%; background: $primary; transform: translateX(1200px); transition: all .5s ease .2s;
+            &:first-child { background: #fff; transform: translateX(-1200px);}
+        }
+    }
+
+    .panel__left { width: 40%; padding: 150px 60px 0 0; transform: translateX(-1200px);
+        @include breakpoint(brotherbear) { width: 100%; background: #fff; padding: 95px 20px 40px;}
+    }
+    .panel__right { width: 60%; padding: 100px 0 40px 60px; transform: translateX(1200px);
+        @include breakpoint(brotherbear) { width: 100%; background: $primary; padding: 40px 20px;}
+    }
+
+    &__content { display: flex; width: 100%; height: 100%; position: relative; z-index: 2; width: 100%; margin: 0 auto; padding: 0 20px; -ms-overflow-y:scroll; overflow-y:scroll; -webkit-overflow-scrolling:touch; overflow-x: hidden;
+
+        @include breakpoint(brotherbear) { flex-direction: column; padding: 0;}
+
+        .oc__nav__trigger { display: block; color: $secondary; position: absolute; right: 20px; top: 35px; z-index: 10;
+            i { font-size: 38px;}
+        }
+
+        &__panel { width: 50%; transition: all .5s ease; position: relative;
+
+            @import '../../../modules/flexible-content/scss/inc/fc-masonry';
+
+            .fc_masonry {
+                .masonry__wrapper {
+                    .masonry { padding: 0; margin: -10px;
+                        &__item { width: 50%;
+                            @include breakpoint(grandpabear) { width: 100%;}
+
+                            &.property article .apf__property__border { background: #fff;}
+                            &.blog {
+                                .masonry__item__wrapper { background: #fff; border-radius: 5px; overflow: hidden;}
+                                .blog__img { height: 235px;}
+                            }
+                        }
+                    }
+                }
+            }
+
+            .logo { max-width: 140px; width: 100%; position: absolute; top: 0; right: -70px; opacity: 0; visibility: hidden; transition: all .5s ease;
+                @include breakpoint(brotherbear) { right: auto;}
+            }
+        }
+    }
+
+    &.oc__nav__active { z-index: 999999; visibility: visible; opacity: 1; transition: all .5s ease;
+        .oc__nav__background {
+            figure { transform: translateX(0); transition: all .5s ease;}
+        }
+
+        .oc__nav__content {
+            article { transform: translateX(0); transition: all .5s ease .2s;
+                .logo { opacity: 1; visibility: visible; transition: all .5s ease .8s;}
+            }
+        }
+    }
+
+}

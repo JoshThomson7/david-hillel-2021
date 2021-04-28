@@ -1,0 +1,28 @@
+/**
+ * AVB Video Styles
+ *
+ * @package advanced-video-banners/
+ * @version 1.0
+*/
+
+.banner__video__player { position:absolute; top:0; left:0; width:100%; height:100%; z-index:-1; overflow:hidden;
+
+    @include breakpoint(mamabear) { display:none;}
+
+    iframe,
+    object,
+    embed { position:absolute; top:0; right:0; bottom:0; left:0; margin:auto; z-index:1; width:100%; height:100%; transform:scale3d(1.5, 1.5, 1.5);}
+}
+
+.banner__video__altimg { display:none; width:100%; height:100%; background-size:cover; background-position:top center; background-repeat:no-repeat; min-height:600px; position:absolute; top:0; left:0; z-index:0;
+
+    @include breakpoint(mamabear) { display:block;}
+}
+
+.banner__video__controls { position: absolute; bottom:20px; right:20px; display: flex; z-index: 50; visibility: hidden; opacity: 0; transition:all .4s ease;
+    &.on { visibility: visible; opacity: 1; transition:all .4s ease;}
+
+    a { display: block; margin: 0 10px;
+        i { font-size: 40px; color: #fff;}
+    }
+}

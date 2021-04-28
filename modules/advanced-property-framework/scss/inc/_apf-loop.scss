@@ -1,0 +1,146 @@
+/*
+*	APF Loop
+*
+*	Styles for the properties loop
+*
+*	@package Advanced Property Framework
+*	@version 1.0
+*/
+
+.apf__ajax__page { display:flex; flex-wrap:wrap;}
+
+article { width:percentage(1/3); border:none; border-left:10px transparent solid; border-right:10px transparent solid; margin-bottom:20px; display:flex; flex: 1 0 320px;
+
+	@include breakpoint(grandpabear) { width:50%;}
+    @include breakpoint(cousinbear) { width:100%;}
+
+	.apf__property__border { display:flex; flex-direction:column; width:100%; border-radius: 5px; box-shadow: 0px 1px 7px rgba(0,0,0,0.1); background: #fff;}
+
+	a.apf__property__img { display:block; background:#fff; color:$text; position:relative; overflow:hidden; background-size:cover; background-position:center; background-repeat:no-repeat; min-height:260px; flex:1 0 220px; border-radius: 5px 5px 0 0;
+
+		.apf__property__status { position:absolute; top:10px; left:0; display:block; padding: 7px 10px 4px; font-size:12px; color:#fff; text-transform:uppercase; font-weight: 700; z-index:3; border-radius: 0 3px 3px 0;
+
+			&.red { background:#f65555;}
+			&.amber { background:#f6bc55;}
+
+		}
+
+		.apf__property__img__overlay { position:absolute; width:100%; height:100%; z-index:2; left:0; top:0; transition:all .3s ease; opacity:0; display:flex;
+			background: rgba(black, 0.5);
+
+            @include breakpoint(mamabear) { display: none;}
+
+			&:before { content:""; display:block; border-radius:100%; width:200px; height:200px; background:rgba(255, 255, 255, 1); transform:scale(1); position:absolute; left:50%; top:50%; margin:-100px; opacity:.3; visibility:hidden;}
+
+			span { transition:all .3s ease; opacity:1; width:50px; height:50px; color:$secondary; font-size:60px; margin:auto;}
+		}
+
+
+		&:hover {
+
+			.apf__property__img__overlay { transition:all .4s ease; opacity:1;
+				&:before { transform:scale(6); opacity:0; transition:all 1s ease; visibility:visible;}
+
+				span { transition:all .4s ease; opacity:1;}
+			}
+
+		}
+
+	}
+
+	.apf__property__details__wrap { display:flex; flex-direction:column; flex:1 0 auto;
+
+		.apf__property__details { padding:20px; flex:1 0 auto;
+
+			h3 { font-size:26px; color: $primary; padding-bottom: 5px; margin:0; font-weight: 700;
+                small { font-size:16px;}
+
+				span {
+					&.apf__preprice { display:block; font-size:16px;}
+                    &.apf__qualifier { font-size:13px; display: block;}
+				}
+			}
+
+            h5 { font-size:16px; color:$text; padding-bottom:15px; margin:0; font-weight: 700; display: flex; align-items: center; line-height: normal;
+                small.new-home { background: $secondary; color: $primary; font-size: 11px; padding: 6px 9px; border-radius: 5px; margin-left: 10px; min-width: 76px; line-height: normal;}
+            }
+
+			p { font-size:15px; color: lighten($text, 10%); margin:0; display: flex; align-items: center;
+				i { margin-right: 5px; color: $secondary; position: relative; top: -2px}
+			}
+
+		}
+
+		.apf__property__meta { display:flex; border-top: 1px $lightgrey solid; flex:1 0 auto; max-height:70px; padding: 20px; align-items: center; justify-content: space-between;
+
+			.apf__property__meta__data { display:flex;
+				@include breakpoint(papabear) { padding:10px 20px;}
+				@include breakpoint(sisterbear) { padding:20px;}
+	
+				span { display:flex; padding-right:15px; color:lighten($text, 1%); align-items:center;
+					i { font-size:22px; display:block; float:left; margin-right:5px;
+						&.flaticon-bath { font-size:20px;}
+					}
+	
+					a { color: $text;}
+				}
+			}
+
+			a.apf__property__meta__action { display:block; text-align:center; font-size: 14px; font-weight: 800; color: $primary; background:none; text-transform: uppercase; font-weight: 700;
+                &:first-child { border-left: 0;}
+			}
+
+		}
+
+    }
+    
+    &.skeleton {
+        a.apf__property__img { @extend .is-loading;}
+
+        .apf__property__details__wrap { 
+            .apf__property__details {
+                h3 { height: 25px; @extend .is-loading; max-width: 30%; margin-bottom: 15px;}
+                h5 { height: 16px; @extend .is-loading; max-width: 60%; margin-bottom: 10px;}
+                p { height: 10px; @extend .is-loading; max-width: 50%;}
+            }
+
+            .apf__property__meta { 
+                .apf__property__meta__data { 
+                    span { width: 15px; height: 15px; border-radius: 100%; @extend .is-loading; margin-right: 10px;}
+                }
+    
+                a { width: 100px; height: 20px; @extend .is-loading;}
+            }
+        }
+    }
+
+}
+
+/* List */
+&.list {
+
+    article { width:100%; flex:auto;
+
+        .apf__property__border { display:flex; flex-direction:row;}
+
+        a.apf__property__img { width:45%; border-radius: 5px 0 0 5px; min-height: 220px;
+            @include breakpoint(sisterbear) { width:25%; min-height:125px; flex:auto;}
+        }
+
+        .apf__property__details__wrap { width:55%; display:flex; flex-direction:column;
+
+            @include breakpoint(sisterbear) {
+                .apf__property__details {
+                    h3 { font-size:20px; color:$text; padding-bottom:10px;}
+                    h5 { font-size:14px; color:$primary;}
+                    p { font-size: 12px;}
+                }
+            }
+
+            .apf__property__meta { margin-top:auto;
+                @include breakpoint(sisterbear) { display:none;}
+
+            }
+        }
+    }
+}

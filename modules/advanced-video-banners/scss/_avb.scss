@@ -1,0 +1,132 @@
+/**
+ * AVB Styles
+ *
+ * @package advanced-video-banners/
+ * @version 1.0
+*/
+section.banners { position: relative; overflow: hidden;
+
+    .small-banner{
+        min-height: 300px!important;
+    }
+
+    .medium-banner{
+        min-height: 500px!important;
+    }
+
+    .large-banner{
+        min-height: 700px!important;
+    }
+
+    /* Global */
+    .banner { position: relative; height: 500px; min-height: 500px; overflow: hidden; overflow: hidden; background: #222124;
+
+        @include breakpoint(brotherbear) { height: calc(100vh - 500px);}
+        @include breakpoint(mamabear) { height: calc(100vh - 650px);}
+
+        &__width { display: flex; height: 100%; overflow: hidden; flex-direction: column; justify-content: space-around;}
+
+        &__caption { z-index: 4; display: flex; flex-direction: column; width: 700px; justify-content: center; box-sizing: border-box; visibility: visibile; opacity: 1; transition: all .4s ease; position: relative;
+            @include breakpoint(papabear) { width: 60%;}
+            @include breakpoint(mamabear) { width: 100%; align-items: center;}
+
+            &.off { visibility: hidden; opacity: 0; transition: all .4s ease;}
+
+            /* carousel fix for flashing content. Yeh boi!!! */
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(0) scale(1.0, 1.0);
+            -webkit-transform: translateZ(0) scale(1.0, 1.0);
+
+            .banner_logo{
+                max-width: 280px; margin: 0 auto 50px;
+
+                @include breakpoint(mamabear) { margin: 0 auto 20px;}
+            }
+
+            h2 { font-size: 60px; color: #fff; font-weight: normal; padding: 0 0 40px; line-height: 64px; font-family: $boldFont;
+                @include breakpoint(brotherbear) { font-size: 32px; line-height: 32px;}
+                @include breakpoint(mamabear) {  font-size: 28px; line-height: 30px; text-align: center;}
+            }
+
+            p { font-size: 18px; color: $white; line-height: 30px; padding: 0 0 40px;
+                @include breakpoint(brotherbear) { font-size: 16px; line-height: 23px;}
+                @include breakpoint(mamabear) { text-align: center; padding-right: 0;}
+            }
+
+            .banner__shortcuts { display: flex; align-items: center; border: 1px rgba(255,255,255,0.5) solid; margin-top: 30px; align-self: center; padding: 7px 0; width: 100%;
+                @include breakpoint(mamabear) { flex-direction: column; align-self: auto; width: 100%; padding: 0;}
+
+                a,
+                article { display: flex; justify-content: center; align-items: center; padding: 6px; border-right: 1px rgba(255,255,255,0.5) solid; color: #fff; font-weight: 600; width: 100%; text-align: center;
+                    @include breakpoint(mamabear) { border-right: none; border-bottom: 1px rgba(255,255,255,0.5) solid; padding: 10px 0;}
+                }
+
+                a:hover { background: rgba(255,255,255,0.1); text-decoration: underline;}
+                a:last-of-type { border-right: none;
+                    @include breakpoint(mamabear) { border-bottom: none;}
+                }
+            }
+
+        }
+
+        &__apf__search{
+            z-index: 9999; margin-top: 100px;
+        }
+
+        &__overlay { position: absolute; width: 100%; height: 160%; bottom: 0; left: 0; z-index: 2; display: flex;
+            /* carousel fix for flashing content. Yeh boi!!! */
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(0) scale(1.0, 1.0);
+            -webkit-transform: translateZ(0) scale(1.0, 1.0);
+
+            background: $primary;
+            // background: -moz-linear-gradient(top, rgba($primary,0) 50%, rgba(darken($primary,3%),0.75) 100%); /* FF3.6-15 */
+            // background: -webkit-linear-gradient(top, rgba($primary,0) 50%,rgba(darken($primary,3%),0.75) 100%); /* Chrome10-25,Safari5.1-6 */
+            // background: linear-gradient(to bottom, rgba($primary,0) 50%,rgba(darken($primary,3%),0.75) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#d9082d35',GradientType=0 ); /* IE6-9 */
+
+            &.opacity {
+                &-0 { opacity: 0;}
+                &-10 { opacity: 0.1;}
+                &-20 { opacity: 0.2;}
+                &-30 { opacity: 0.3;}
+                &-40 { opacity: 0.4;}
+                &-50 { opacity: 0.5;}
+                &-60 { opacity: 0.6;}
+                &-70 { opacity: 0.7;}
+                &-80 { opacity: 0.8;}
+                &-90 { opacity: 0.9;}
+                &-100 { opacity: 1;}
+            }
+        }
+
+        &__top__gradient { background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 5%, transparent); position: absolute; top: 0; left : 0; width: 100%; height: 50%; z-index: 3;}
+
+        &__bg__img { width: 100%; height: 100%; background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 600px; position: absolute; top: 0; left: 0; z-index: 1; transform: translateZ(0); animation: 16s forwards zoomScale; transform-origin: center center 0;}
+
+        &__caption__skew { width: 70%; height: 100%; position: absolute; top: 0; left: -200px; transform: skewX(-23deg); z-index: 1; overflow: hidden;
+            &:before { content: ""; background-image: url('img/banner-shape.svg'); background-size: 60%; background-repeat: no-repeat; transform: skewX(23deg); width: 120%; height: 120%; position: relative; top: -80px; left: 20%; display: block; opacity: 0.07}
+
+            @include breakpoint(brotherbear) { width: 80%;}
+            @include breakpoint(mamabear) { width: 100%; transform: none; left: 0;
+                &:before { transform: none;}
+            }
+        }
+
+        /* Video */
+        @import 'inc/avb-video';
+    }
+        
+
+    /* Inner */
+    @import 'inc/avb-inner';
+
+    /* APF search */
+    @import 'inc/avb-apf-search';
+
+    /* Lighslider */
+    @import 'inc/avb-lighslider';
+
+}

@@ -1,0 +1,17 @@
+
+.blog-results { padding: 20px 0 30px; display: flex; flex-wrap: wrap; box-sizing: border-box; width: 100%; margin: 0 -20px; 
+	@include breakpoint(mobile) { padding: 0 0 20px; box-sizing: border-box; }
+	
+	&-category{ flex: 1 0 50%; box-sizing: border-box; margin-bottom: 30px; padding: 0 20px; 
+
+		h4{ display: block; font-size: 1.35rem; color: $primary;  margin-bottom: 20px; font-weight: 600;
+			
+			a{ color: $primary;
+				&:hover{ text-decoration: underline;}
+			}
+
+		}
+
+	}
+	
+}

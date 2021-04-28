@@ -1,0 +1,33 @@
+/*
+*	Blog Single
+*
+*	Styles for blog single
+*
+*	@package Blog
+*	@version 1.0
+*/
+
+.blog__single { padding-right:40px; padding-top: 40px; display: flex !important; justify-content: space-between;
+
+	@include breakpoint(iphone_p) { flex-direction: column; padding-right: 0;}
+	@include breakpoint(mobile) { flex-direction: column; padding-right: 0;}
+
+	article { width: 70%; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -4px rgba(0, 0, 0, 0.2); padding: 20px 30px; height: 100%;
+		@include breakpoint(iphone_p) { width: 100%; box-sizing: border-box; }
+		@include breakpoint(mobile) { width: 100%; box-sizing: border-box; }
+		
+		h1 { font-size: 36px; margin: 0; line-height: 38px; }
+		h2 { font-size: 28px; }
+        h5 { padding-bottom:0; margin-top: 5px;
+            span { display: block; font-size: 20px; color: $text; margin-top: 10px;
+                i { margin-right: 10px;}
+            }
+        }
+
+        .blog__featured__image { min-height: 320px; background-size: cover; background-repeat: no-repeat; background-position: center; margin-bottom: 20px;}
+
+	}
+
+	.blog__sidebar { padding-top: 0; }
+	
+}

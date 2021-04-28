@@ -1,0 +1,42 @@
+/*
+------------------------------------------------
+   ______                                 __
+  / ____/___ __________  __  __________  / /
+ / /   / __ `/ ___/ __ \/ / / / ___/ _ \/ /
+/ /___/ /_/ / /  / /_/ / /_/ (__  )  __/ /
+\____/\__,_/_/   \____/\__,_/____/\___/_/
+
+------------------------------------------------
+Carousel
+*/
+
+.fc_carousel_images {
+
+    .carousel_images { display: flex; justify-content: space-around; height: 100px !important; width: 100% !important;
+        .carousel_image { display: flex; align-items: center; justify-content: center; float: none; padding: 0 15px; max-width: 195px; width: 100%;
+            img { width: auto; max-height: 100px;}
+        }
+    }
+
+    // Lightslider Pagination
+    ul.lSPager { display: flex; justify-content: center; margin: 10px 0 0;
+        li { border-radius: 100%; width: 15px; height:15px; margin: 5px; background: #ccc; list-style: none;
+            a { display: none;}
+            &.active { background: $primary;}
+        }
+    }
+
+    .lSAction {
+        a { z-index: 5;
+            &.lSPrev,
+            &.lSNext { background: none; color: $text; font-size: 40px; background: #fff; height: 47px;}
+        }
+
+        &>.lSPrev { left:0;}
+        &>.lSNext { right:0;
+            i { float: right;}
+        }
+    }
+
+    &.footer{ background: $white; border-top: 1px solid $border; border-bottom: 1px solid $border ;}
+}

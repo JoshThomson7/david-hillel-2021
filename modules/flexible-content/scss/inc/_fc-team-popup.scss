@@ -1,0 +1,111 @@
+/*
+-----------------------------
+  ______                        ____
+ /_  __/__  ____ _____ ___     / __ \____  ____        __  ______
+  / / / _ \/ __ `/ __ `__ \   / /_/ / __ \/ __ \______/ / / / __ \
+ / / /  __/ /_/ / / / / / /  / ____/ /_/ / /_/ /_____/ /_/ / /_/ /
+/_/  \___/\__,_/_/ /_/ /_/  /_/    \____/ .___/      \__,_/ .___/
+                                       /_/               /_/
+-----------------------------
+Team Pop-up
+*/
+
+.team__popup__holder { display:flex; transition:all .5s ease; position:fixed; width:100%; height:100%; z-index:10; top:0; left:0; -ms-overflow-y:scroll; overflow-y:scroll; -webkit-overflow-scrolling:touch; visibility: hidden; opacity: 0; align-items: flex-start; justify-content:center; padding-top: 100px;
+
+    /* Old browsers */
+    // background: #031317;
+    background: $lightgrey;
+    /* FF3.6-15 */
+    // background: -moz-linear-gradient(-45deg, rgba(#031317, 0.9) 0%, rgba(#082d35, 0.9) 100%);
+    background: -moz-linear-gradient(-45deg, rgba($lightgrey, 0.9) 0%, rgba($lightgrey, 0.9) 100%); 
+    /* Chrome10-25,Safari5.1-6 */
+    // background: -webkit-linear-gradient(-45deg, rgba(#031317, 0.9) 0%,rgba(#082d35, 0.9) 100%);
+    // background: linear-gradient(135deg, rgba(#031317, 0.9) 0%,rgba(#082d35, 0.9) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba($lightgrey, 0.9) 0%,rgba($lightgrey, 0.9) 100%);
+    background: linear-gradient(135deg, rgba($lightgrey, 0.9) 0%,rgba($lightgrey, 0.9) 100%); 
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#031317', endColorstr='#082d35',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f8f9', endColorstr='#f5f8f9',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */
+
+    @include breakpoint(mamabear) { align-items: flex-start;}
+
+    &.on { transition:all .5s ease; visibility: visible; opacity: 1;}
+
+    .team__popup { background:rgba(255, 255, 255, 1); position:relative; transition:all .2s ease; transform:rotateX(90deg); max-width:1200px; display:none; border-radius: 5px; box-shadow: 0 5px 20px rgba(black, 0.3); overflow: hidden; width: 100%; min-height: 420px;
+        @include breakpoint(mamabear) { flex-direction:column;}
+
+        .team__popup__img { width:40%; position:relative; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: top center; min-width: 320px; border-radius: 10px;
+            @include breakpoint(mamabear) { width:100%; height: 340px; margin-bottom:20px;}
+
+            img { width:100%;}
+
+            a.team__video { position:absolute; bottom:-87%; left:0; background:rgba($primary, 0.8); padding:18px 0 0; text-align:center; color:#fff; font-size:20px; display:block; width:100%; height:100%; transition:all .5s ease; text-transform:uppercase; display: flex; justify-content: center; align-items: flex-start;
+
+                span { display:inline-block; margin:0 10px 0 0; text-align:center; font-size:22px;
+                    &:before { margin-left:4px;}
+                }
+
+                &:hover { transition:all .5s ease; bottom:0; box-sizing:border-box; align-items: center; flex-direction: column;
+                    span { display:block; font-size:58px;
+                        &:before { margin-left:7px;}
+                    }
+                }
+            }
+        }
+
+        .team__popup__content { width:60%; padding:30px 40px 20px; position:relative;
+            @include breakpoint(mamabear) { width:100%; padding:20px 10px;}
+
+            .team__popup__nav { position:absolute; top:0; right:10px;
+                ul { display:flex; margin:0; padding:0;
+                    li { list-style:none;
+                        a { font-size:28px; color:$text; padding: 10px; display:block;
+                            &:hover { color:$primary;}
+                        }
+
+                        &.inactive {
+                            a { color: $lightgrey; pointer-events: none;}
+                        }
+                    }
+                }
+            }
+
+            .team__popup__meta { display: flex; align-items: center; margin: 10px 0 20px; padding: 10px; border-top: 1px $border solid; border-bottom: 1px $border solid;
+
+                article { padding-right: 20px; display: flex; align-items: center;
+                    i { color: $secondary; margin-right:10px; font-size: 20px;}
+                    a { color: $primary;}
+                }
+
+            }
+        }
+
+        .team__popup_name{
+            h3 { font-size: 28px; color:$primary; font-weight: 600; margin:0 0 10px; display: flex;
+    
+                &:before{
+                    content: "";display: block;width: 2px;max-height: 60px;background: #c2d217;margin-right: 10px;height: 40px; margin-left: -10px;
+                }
+            }
+
+            span { display:block; font-size:17px; color:$text; text-transform:none;}
+        }
+
+        .team__popup__email { display:block; padding-bottom:27px; padding-left:35px;
+            span { padding-top:4px; display:block;}
+            a { color:#d9cfcf;}
+        }
+
+        p { line-height: 26px; margin: 0 0 20px 0; font-size: 16px; padding: 0; color:$text; clear: both;
+            &:last-of-type { padding-bottom:0;}
+        }
+
+        &.is__active { display:flex; transform:rotateX(0deg);
+            &.rotate__bye { transform:rotateX(90deg); transition:all .2s ease;}
+            &.rotate__hello { transform:rotateX(0deg); transition:all .2s .2s ease;}
+        }
+
+    }
+
+}

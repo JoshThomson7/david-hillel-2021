@@ -1,0 +1,80 @@
+/*
+*	FC Global
+*
+*	Global stuff
+*
+*	@package Flexible Content
+*	@version 1.0
+*/
+
+.grey { background: $lightgrey;}
+
+.is__skewed { z-index: 10;
+
+    // top
+    &.top__normal { @include angle-edge( #fff, topright, 3deg);}
+    &.top__invert { @include angle-edge( #fff, topleft, 3deg);}
+
+    // bottom
+    &.bottom__normal { @include angle-edge( #fff, '', '', bottomleft, 3deg);}
+    &.bottom__invert { @include angle-edge( #fff, '', '', bottomright, 3deg);}
+
+    &.grey {
+        // top
+        &.top__normal { @include angle-edge( $lightgrey, topright, 3deg);}
+        &.top__invert { @include angle-edge( $lightgrey, topleft, 3deg);}
+
+        // bottom
+        &.bottom__normal { @include angle-edge( $lightgrey, '', '', bottomleft, 3deg);}
+        &.bottom__invert { @include angle-edge( $lightgrey, '', '', bottomright, 3deg);}
+    }
+}
+
+.section__heading { display: flex; flex-direction: column; padding: 0 0 20px 0; max-width: 550px;
+
+    h2 { font-size: 30px; text-transform: none; color: $primary; margin: 0; display: flex; font-family: $boldFont;}
+
+    p { margin: 15px 0 0; font-size: 1rem; line-height: 25px;
+        @include breakpoint(teenbear){padding-left: 0;}
+        strong { font-weight: 800;}
+    }
+
+    &.centred { align-items: center; max-width: 800px; margin: 0 auto;
+        h2 { 
+            &:after { margin: 20px auto;}
+        }
+
+        h2,
+        p { text-align: center; padding: 0 10px;}
+    }
+}
+
+// Lightslider Pagination
+ul.lSPager.lSpg { display: flex; justify-content: center; margin: 0; padding-top: 20px;
+    > li { border-radius: 100%; width: 12px; height:12px; margin: 3px; background: darken($lightgrey, 5%); list-style: none;
+        & > a { display: none;}
+        &.active { background: $primary;}
+    }
+}
+
+.lSAction {
+    a { z-index: 5;
+        &.lSPrev,
+        &.lSNext { background: none; color: $text; font-size: 40px; background: #fff; height: 47px;}
+    }
+
+    &>.lSPrev { left:0;}
+    &>.lSNext { right:0;
+        i { float: right;}
+    }
+}
+
+.slick-dots { position: static; margin: 20px 0;
+    li { margin-bottom: 0;
+        button:before { color: $text; font-size: 45px;}
+
+        &.slick-active { 
+            button:before { opacity: 1;}
+        }
+    }
+}

@@ -1,0 +1,128 @@
+/*
+*	Property sidebar
+*
+*	@package Advanced Property Framework
+*	@version 1.0
+*/
+.apf__single__property__sidebar { width:30%;
+
+    @include breakpoint(brotherbear) { width:100%; padding:0;}
+
+    article { margin-bottom:20px; padding:20px; border-radius: 3px;
+
+        h3 {  font-size:24px; padding-bottom:15px; font-weight: 700;}
+        p { font-size:16px; padding-bottom:15px;
+            strong { font-weight: 700;}
+        }
+
+        &.viewing { background: $secondary;
+
+            h3 { color: $primary;}
+            p { color: $primary;}
+
+            ul {
+                li {
+                    a { font-size:14px; color:#fff; display:flex; align-items:center;
+                        span { }
+                    }
+                }
+            }
+        }
+
+        &.branch { background: $lightgrey;
+            h3 { color: $primary;}
+            h4 { font-size: 18px; color: $primary; margin-bottom: 20px; font-weight: 700;}
+
+            .branch__img { margin-bottom: 20px;}
+
+            .branch__details {
+                .branch__dept {
+                    p { display: flex;
+                        i { font-size: 18px; color: $secondary; margin-right: 10px; position: relative; top: 2px;}
+
+                        a { color: $text;
+                            &:hover { color: $primary;}
+                        }
+                    }
+                }
+
+                .branch__hours { margin-top: 20px;
+                    ul {
+                        li { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px 9px; border-bottom: 1px darken($lightgrey, 3%) solid;
+                            span { 
+                                &.times { color: $primary;}
+                            }
+    
+                            &.today { background: $lightgrey; color: $primary; font-weight: 700; position: relative;
+                                &:after { content: ""; display: block; width: 4px; height: 100%; position: absolute; right: 0; top: 0;}
+    
+                                &.open { background: lighten(#6eba63, 42%);
+                                    &:after { background: #6eba63;}
+                                }
+    
+                                &.closed { background: lighten(tomato, 35%);
+                                    &:after { background: tomato;}
+                                }
+    
+                                &.about-to-close { background: lighten(#e89415, 48%);
+                                    &:after { background: #e89415;}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.transport { background: $lightgrey;
+            h3 { color: $primary;}
+
+            ul {
+                li { padding-bottom:10px; color: $text; display: flex; align-items: center; font-weight: 600;
+                    figure { width: 20px; margin-right: 10px;}
+                }
+            }
+        }
+
+        &.share { background: $secondary;
+
+            h3 { color: $primary;}
+            p { color: $primary; line-height:20px; padding-bottom:15px;}
+
+        }
+
+        &.documents { background: $primary;
+
+            h3 { color: #fff;}
+
+            ul {
+                li { padding-bottom:10px;
+                    a { font-size:15px; color: #fff; display:flex; align-items:center;
+                        i { font-size:20px; margin-right:10px; color: $secondary}
+
+                        &:hover { color: $secondary;}
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.apf__book__viewing__button { background: $primary; color: #fff; font-size: 20px; font-weight: 700; text-align:center; display:flex; align-items:center; justify-content:center; padding:20px 15px 20px; margin-top:10px; border-radius: 3px;
+
+    @include breakpoint(babybear) { margin:0;}
+
+    span { display:inline-block; margin-right:10px;}
+
+    &:hover { background:lighten($primary, 5%);}
+
+    &.apf__mobile { display:none; margin-bottom:20px;
+        @include breakpoint(papabear) { display:block;}
+    }
+
+}

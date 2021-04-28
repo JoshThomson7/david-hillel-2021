@@ -1,0 +1,135 @@
+/*
+    Masonry Circles
+*/
+
+@include breakpoint(brotherbear){}
+
+.fc_circle_masonry {
+
+    .masonry_circles_wrapper { display: flex; flex-wrap: wrap; margin: 0 10px; margin: 30px auto; justify-content: center;
+
+        // SCROLL
+        @include breakpoint(teenbear){overflow-x: scroll;height: 200px;flex-wrap: nowrap;justify-content: flex-start; margin: 0 auto;-webkit-overflow-scrolling: touch;
+
+            &::-webkit-scrollbar {
+                width: 1em;
+                border-radius: 25px;
+                background-color: $primary!important;
+            }
+             
+            &::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                border-radius: 25px;
+            }
+             
+            &::-webkit-scrollbar-thumb {
+              background-color: $primary!important;
+              outline: 1px solid slategrey;
+              border-radius: 25px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover{
+                background: $secondary;
+            }
+
+        }
+
+        article { display: flex; justify-content: center; align-items: center; flex: 1 0 18%;  height: auto; position: relative; overflow: hidden; padding: 5px 20px 5px; box-sizing: border-box; margin-bottom: -20px;
+
+            @include breakpoint(cousinbear){padding: 5px 10px;}
+            @include breakpoint(teenbear){margin-bottom: 0;}
+
+            // SCROLL
+            // @include breakpoint(brotherbear){flex: 1 0 25%;}
+            // @include breakpoint(sisterbear){flex: 1 0 35%;padding: 5px 10px;}
+
+
+            .circle__image { background-color: $tertiary; background-size: cover; background-position: center; background-repeat: no-repeat; transition: all .8s ease; transform: scale(1); overflow: hidden; position: relative;  width: 100%; height: auto; padding-top: 100%;
+                // @include breakpoint(sisterbear) { min-height: 260px;}
+
+                &__overlay{ 
+                    background: $primary;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+
+                    &.opacity {
+                        &-0 { opacity: 0;}
+                        &-10 { opacity: 0.1;}
+                        &-20 { opacity: 0.2;}
+                        &-30 { opacity: 0.3;}
+                        &-40 { opacity: 0.4;}
+                        &-50 { opacity: 0.5;}
+                        &-60 { opacity: 0.6;}
+                        &-70 { opacity: 0.7;}
+                        &-80 { opacity: 0.8;}
+                        &-90 { opacity: 0.9;}
+                        &-100 { opacity: 1;}
+                    }
+                }
+            }
+               
+            .circle { display: flex; align-items: center; position: relative; width: 100%;  overflow: hidden; border-radius: 50%; box-shadow: 0px 1px 7px rgba($primary,0.1);
+                
+                  &:hover { transform: scale(1.05);
+                    .circle__image { transform: scale(1.05); transition: all .8s ease;}
+                    .circle__content { 
+                        h3 { 
+                            i { transform: translateX(4px) translateY(-2px); transition: all .4s ease;}
+                        }
+                    }
+                }
+            }
+
+            .circle__content { position: absolute; top: 0; left:0; width: 100%; height: 100%; padding: 20px; justify-content: center; align-items: center; transition: all .8s ease; padding: 0 10px; display: flex; flex-direction: column; height: 100%;
+
+                h3 { font-size: 1.30rem; margin-bottom: 10px; line-height: 1.4; font-weight: 600; color: $primary; text-align: center; text-transform: uppercase;
+                
+                    @include breakpoint(cousinbear){font-size: 0.85rem;}
+
+                }
+
+                p { max-width: 335px; font-size: 16px; line-height: 22px; color: $primary;
+                    &:before { content: ""; display: block; height: 3px; background: $secondary; max-width: 100px; margin: 10px 0 15px;}
+                }
+
+            }
+
+            &.size{
+
+                &-large{ flex: 1 0 240px; max-width: 280px;
+                    @include breakpoint(brotherbear){flex: 1 0 240px;max-width: 240px;}
+                    @include breakpoint(cousinbear){flex: 1 0 200px;max-width: 200px;}
+                    @include breakpoint(mamabear){flex: 1 0 170px;max-width: 170px;}
+                    @include breakpoint(teenbear){min-width: 160px;}
+
+                    .circle__content { 
+                        h3{ font-size: 1.3rem;
+                            
+                            @include breakpoint(cousinbear){font-size: 0.85rem;}
+                        }
+                    }
+                }
+
+                &-small{ max-width: 240px; 
+                    @include breakpoint(brotherbear){max-width: 180px;}
+                    @include breakpoint(cousinbear){max-width: 160px;}
+                    @include breakpoint(teenbear){min-width: 160px;}
+                }
+
+            }
+
+            &.has_image{
+
+                .circle__content{
+                    h3{ color: $white; }
+                }
+            }
+
+        }
+
+        .break{ flex-basis: 100%; height: 40px; }
+    }
+}

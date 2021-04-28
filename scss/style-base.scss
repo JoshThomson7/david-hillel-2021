@@ -1,0 +1,861 @@
+// SCSS Awesomeness
+
+/* -------------------------------------------
+    ____           __          __
+   /  _/___  _____/ /_  ______/ /__  _____
+   / // __ \/ ___/ / / / / __  / _ \/ ___/
+ _/ // / / / /__/ / /_/ / /_/ /  __(__  )
+/___/_/ /_/\___/_/\__,_/\__,_/\___/____/
+
+------------------------------------------- */
+
+// General
+@import 'inc/vars';
+@import 'inc/mixins';
+@import 'inc/reset';
+@import 'inc/fonts';
+@import 'inc/wp-login';
+@import 'inc/404';
+@import 'inc/search-results';
+@import 'inc/animations';
+@import 'inc/nav';
+@import 'inc/mega-menu';
+@import 'inc/breadcrumbs';
+
+// lib
+@import '../lib/lightgallery/css/lightgallery';
+@import '../lib/lightslider/css/lightslider';
+@import '../lib/tooltipster/scss/tooltipster.bundle.min';
+@import '../lib/tooltipster/scss/tooltipster-sideTip-punk.min';
+@import '../lib/slick/scss/slick-theme';
+@import '../lib/slick/scss/slick';
+
+// Modules
+@import '../modules/off-canvas-nav/scss/oc-nav';
+@import '../modules/advanced-video-banners/scss/avb';
+@import '../modules/flexible-content/scss/flexible-content';
+@import '../modules/advanced-slide-menu/scss/asm';
+
+/* -------------------------------------------
+   ________      __          __
+  / ____/ /___  / /_  ____ _/ /
+ / / __/ / __ \/ __ \/ __ `/ /
+/ /_/ / / /_/ / /_/ / /_/ / /
+\____/_/\____/_.___/\__,_/_/
+
+------------------------------------------- */
+
+body { font-family:$primaryFont; font-size:$baseFontSize; font-weight: 500; color:$text; overflow-x: hidden;
+    &.no__scroll { overflow:hidden;}
+}
+
+.floating-social-media{
+    position: fixed; top: 15%; right: 0; z-index: 9999; display: flex; flex-direction: column; background: $primary; padding: 8px 3px 8px 5px; border-radius: 5px 0 0 5px;
+
+    @include breakpoint(teenbear){display: none;}
+
+    a{
+        i{
+            font-size: 20px; border-radius: 50%; border: 2px solid $secondary; background: $secondary; height: 40px; width: 40px; display: flex; align-items: center; justify-content: center; margin: 3px 0; color: $primary; transition: .5s ease all;
+            &:hover{
+                color: white; background: $primary;
+            }
+        }
+    }
+
+}
+
+.floating-reviews{
+    position: fixed; top: 50%; right: 0; z-index: 9999; display: flex; flex-direction: column; background: $lightgrey; padding: 10px 20px;
+
+    img{
+        max-width: 100px;
+    }
+}
+
+#page { 
+    background:#fff; display: flex; flex-direction: column;
+
+    // &.background-sphere{
+    //     background-image: url(img/left-elipse.png); background-position: top left; background-repeat: no-repeat; background-size: 800px;
+    // }
+
+    section.banners{
+        .banner{
+            .banner__width{
+
+                @include breakpoint(mamabear){flex-direction: column!important; justify-content: center;}
+
+                .landing__form{width: 40%; max-width: 500px; background: $primary;padding: 30px 20px;position: relative;left: -10px; z-index: 999; top: 30px;
+
+                    @include breakpoint(mamabear){padding: 15px 20px 20px 20px; width: 80%;}
+        
+                    h3{color: $white;font-size: 24px;}
+
+                    .gform_wrapper{
+                        margin: 0!important;
+
+                        form{
+                            .gform_body{margin: 0!important;
+            
+                                ul{
+                                    li{padding: 10px 0!important;
+
+                                        label{
+                                            color: white!important;
+                                        }
+            
+                                        div{width: 100%!important; display: flex; flex-direction: column;
+            
+                                            span{padding: 0!important; width: 100%;
+                                            }
+                                        }
+            
+                                        input{width: 100%; margin: 0!important; height: 50px; padding: 5px 0 5px 10px!important;
+
+                                            @include breakpoint(mamabear){min-height: 40px}
+            
+                                            &::placeholder{color: $primary!important; }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            .gform_footer{
+                                padding: 0!important;
+            
+                                input{
+                                    background: $secondary; border: 2px solid $secondary; color: $primary; width: 100%; margin: 10px 0 0!important; height: 50px; padding: 0;
+
+                                    @include breakpoint(mamabear){height: 40px; padding: 0;}
+            
+                                    &:hover{
+                                        color: white; background: $primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#gform_1{
+    .gfield_label{
+        display: none;
+    }
+
+    .hidden_sub_label{
+        display: none!important;
+    }
+
+    .name_first, .name_last{
+        width: 100%;
+    }
+}
+
+a {
+    &:hover { transition:all .3s ease;}
+
+    strong{ font-weight: 600;}
+}
+
+/* Wrap */
+.max__width { max-width: 1400px; margin:0 auto; width:100%; padding:0 20px;}
+.max__width__960 { max-width:960px; margin:0 auto; width:100%; padding:0 10px;}
+.max__width__1800 { max-width:1800px; margin:0 auto; width:100%; padding:0 10px;}
+
+/* Heading */
+.heading {
+    @include breakpoint(babybear) { padding-bottom:0;}
+
+    &.centre { text-align:center;}
+
+    h2 { font-size:30px; font-weight:400; color:$text; padding-bottom:15px;}
+    p { color:$text;}
+}
+
+img { max-width: 100%; width: auto; height: auto; vertical-align: middle; border: 0; -ms-interpolation-mode: bicubic;}
+
+/**
+* Loaders
+*/
+.wp__loading { display: none; width: 20px; margin: 0 auto;
+    &.is__loading { display: block;}
+}
+
+.tooltip_templates { display: none;}
+
+.is__curved__top-left { background-image: url('img/half-circle-gradient-top-left.png'); background-position: top left; background-repeat: no-repeat;}
+.is__curved__top-right { background-image: url('img/half-circle-gradient-top-right.png'); background-position: top right; background-repeat: no-repeat;}
+.is__curved__bottom-left { background-image: url('img/half-circle-gradient-bottom-left.png'); background-position: bottom left; background-repeat: no-repeat;}
+.is__curved__bottom-right { background-image: url('img/half-circle-gradient-bottom-right.png'); background-position: bottom right; background-repeat: no-repeat;}
+
+/**
+* Buttons
+*/
+a.button, button.button { display: flex; background: $secondary; align-self: flex-start; transition: all .4s ease; padding: 18px 40px 18px; cursor: pointer; border: none;
+    span { font-size: 16px; text-align: center; color: $white; line-height: 16px; font-family: $primaryFont;
+    }
+
+    &.primary{ background: $primary;  color: $white;
+        span{ color: $white; }
+    }
+
+    &.secondary{ background: $secondary; color: $white;
+        span{ color: $white; }
+    }
+
+    &.tertiary{ background: $tertiary; color: $primary; 
+        span{ color: $primary; }
+    }
+
+    &.outline{ background-color: transparent; border: 1px solid $secondary; color: $primary;
+        span{ color: $primary;}
+    }
+
+    &.small{ padding: 7px 10px; color: $primary; font-size: 0.8125rem; margin: 0; 
+        
+        span{ font-size: 0.8125rem}
+    }
+
+    @include breakpoint(mamabear) { align-self: center;}
+
+    &:hover { transition: all .4s ease; background: $primary; box-shadow: 0 3px 30px rgba(black, 0.2); transform: scale(1.03); color: $white;
+        span{
+            color: $white;
+        }
+    }
+}
+
+.arrow__link { display: inline-flex; align-items: center; font-size: 17px; color: $primary; font-weight: 800; text-transform: uppercase;
+    i { color: $secondary; margin-left: 10px; transform: translateY(-2px); transition: all .4s ease;}
+
+    &:hover { color: lighten($primary, 5%);
+        i { transform: translateX(4px) translateY(-2px); transition: all .4s ease;}
+    }
+}
+
+/* -------------------------------------------
+    __                            __
+   / /   ____ ___  ______  __  __/ /_
+  / /   / __ `/ / / / __ \/ / / / __/
+ / /___/ /_/ / /_/ / /_/ / /_/ / /_
+/_____/\__,_/\__, /\____/\__,_/\__/
+            /____/
+
+------------------------------------------- */
+
+header.header { width:100%; transition: top .3s ease; position: sticky; z-index: 999999999; top: 0;
+
+    .header__main { position: relative; background: $white; padding: 10px 0 15px;
+        @include breakpoint(papabear) { padding: 5px 0;}
+
+        .max__width { display: flex; justify-content: space-between; align-items: center;}
+
+        .oc__nav__trigger,
+        .burger__menu {
+            display: none;
+            @include breakpoint(papabear) { display: block;}
+
+            a { display: flex; align-items: center; color: $primary; font-family: $boldFont; font-size: 16px;
+                &:hover{
+                    color: $white; border: 1px solid $primary;
+
+                    i{color: $white;}
+                }
+
+                i { font-size: 18px;  color: $primary; padding-right: 15px;}
+            }
+        }
+
+        .header_logo_menu{
+            display: flex;
+
+            .logo {
+    
+                a { display:block;
+                    img { width: 150px; align-self:center; margin: 0 auto;
+                        @include breakpoint(papabear) { width: 120px;}
+                    }
+                }
+            }
+        }
+
+        .header__cta{ display: flex; align-items: flex-end; flex-direction: column;
+            @include breakpoint(papabear) { flex-direction: row; align-items: center;}
+
+            .header__menu{
+                display: flex; align-items: center; 
+                @include breakpoint(papabear) { display: none;}
+           
+                ul { display: flex; align-items: center; margin-left: 20px;
+                    @include breakpoint(papabear) { margin-left: 0;}
+    
+                    li  { padding: 0 10px; display: flex; align-items: center;
+
+                        &.button{
+                            background: $secondary; color: $white; padding: 8px 15px; margin-left: 10px;
+
+                            a{
+                                color: $white;
+                                &:hover{
+                                    color: $primary;
+                                }
+                            }
+                        }
+    
+                        a { font-size: 15px; color: $text; display: flex; align-items: center; text-transform: uppercase; text-align: center;
+
+                            &:hover{
+                                color: $secondary;
+                            }
+
+                            &.button{ min-height: 34px; font-weight: bold;
+                                @include breakpoint(papabear) { display: none;}
+                            }
+
+                            i { color: $secondary; font-size: 18px; margin-right: 10px;
+                                @include breakpoint(papabear) { font-size: 25px; margin: 0 0 0 15px;}
+                            }
+    
+                            span{ 
+                                @include breakpoint(papabear) { display: none;}
+                            }
+                        }
+                    }
+            
+                }
+            }
+
+            .contact{
+                margin-bottom: 5px;
+                @include breakpoint(papabear) { margin-right: 30px; margin-bottom: 0;}
+                @include breakpoint(teenbear) {display: none;}
+
+                li{
+
+                    i{color: $tertiary; margin-right: 7px; font-size: 22px;}
+
+                    a{ color: $text; font-family: $primaryFont;
+                        &:hover{
+                            color: $secondary;
+
+                            i{
+                                color: $white;
+                            }
+                        }
+                    }
+
+                    &.image{
+                        margin-right: 20px;
+                        @include breakpoint(papabear) { display: none;}
+
+                        img{
+                            width: 100px;
+                        }
+                    }
+                }
+            }
+
+               
+            ul { display: flex; align-items: center;
+                @include breakpoint(papabear) { margin-left: 0;}
+
+                li  { padding: 0 10px; display: flex; align-items: center;
+
+                    a { font-size: 16px; color: $white; display: flex; align-items: center;
+
+                        &.button{
+                            padding: 14px 20px;
+                            @include breakpoint(papabear) { display: none;}
+                        }
+
+                        span{ 
+                            @include breakpoint(papabear) { display: none;}
+                        }
+                    }
+                }
+        
+            }
+        }
+
+    }
+
+    &.sticky,
+    &.not-sticky { background: rgba(darken($primary, 15%), .8); transition: top .3s ease;
+        .logo {
+            img{ width: 90px; transition: top .3s ease;}
+        }
+    }
+
+    &.sticky { top: 0;}
+    &.not-sticky { top: -150px;}
+
+    &.reset {        
+        .logo { 
+            img{ width: 125px; transition: top .3s ease;
+                @include breakpoint(papabear) { width: 70px;}
+            }
+        }
+    }
+
+    
+    .mega__menu {
+        @include breakpoint(papabear) { display: block;}
+        @include breakpoint(mamabear) { flex: 0;}
+
+        a { display: block; color: $secondary;
+            i { font-size: 38px;}
+        }
+    }
+}
+
+/* Seperators */
+.seperator{ margin: 20px 0; border-top: 1px solid $border;
+    
+    &--with-logo{ margin: 30px auto; position: relative; text-align: center; display: flex; justify-content: center;
+
+        &:before{ content:""; top: -15px; position: absolute; background:url('img/logo.png') center no-repeat #fff; background-size: contain; width: 150px; height: 30px; border-left: 10px solid $white; border-right: 10px solid $white;}
+
+    }
+}
+
+section {
+
+    // gradients
+    &.circle__gradient__left { background-image: url('img/half-circle-gradient-top-left.png'); background-position: top left; background-repeat: no-repeat;}
+   
+}
+
+// HOME BACKGROUND
+.home{
+    .flexible__content{
+        .fc_circle_masonry{
+            background-image: url('img/left-elipse.png'); background-position: top left; background-repeat: no-repeat; background-size: contain;
+        }
+    }
+}
+
+.home{
+    .flexible__content{
+        .fc_featured_testimonials{
+            background-image: url('img/right-elipse.png'); background-position: top right; background-repeat: no-repeat; background-size: contain;
+        }
+    }
+}
+
+// INFO WINDOW || ABOUT OUR AREA
+.wpgmza-infowindow{
+    p{
+        line-height: 18px!important;
+    }
+}
+
+.footer-blog-posts{
+    background: $lightgrey; padding: 40px 0;
+
+    .max__width{
+        .blog-posts-loop{
+            display: flex; justify-content: space-between;
+
+            .footer_blog_box{
+                width: 23%;
+
+                .image{
+                    height: 150px; background-size: cover; background-repeat: no-repeat;
+                }
+
+                .content{
+                    padding: 20px 10px; background: $white; border: 1px solid #efefef;
+
+                    .title{font-family: $boldFont; color: $primary;}
+                    .excerpt{color: $text; margin-top: 10px;}
+
+                    .blog_button{
+                        margin-top: 20px;
+
+                        a{color: $secondary; text-transform: uppercase; margin-top: 20px; font-family: $boldFont;}
+                        i{color: $secondary; margin-left: 10px;}
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer-form{
+    background-image: linear-gradient(to bottom, rgba($primary, 0.5), rgba($primary, 0.5)),
+    url('http://hmf.wpdev2.com/wp-content/uploads/2021/04/CTA-scaled.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;
+
+    .footer__signup {
+
+        .max__width{
+            display: flex; justify-content: space-between; padding: 80px 10px; align-items: center;
+            
+            @include breakpoint(grandpabear) { flex-direction: column; align-items: center;}
+            @include breakpoint(papabear) { margin-bottom: 0;}
+        }
+
+        &__heading { flex: 1; width: 100%; max-width: 300px; min-width: 170px;
+            @include breakpoint(grandpabear) { text-align: center; min-width: 100%; padding-bottom: 20px;}
+
+            h3 { font-size: 22px; color: $white; margin-bottom: 10px; font-weight: 600;}
+            p { font-size: 14px; line-height: 20px; color: $white;}
+        }
+
+        &__form { flex: 2;
+
+            #mc_embed_signup div#mce-responses{
+                display: none;
+            }
+
+            .form__row { display: flex; justify-content: flex-end; align-items: center;
+                @include breakpoint(brotherbear) { flex-direction: column;}
+
+                .form__field { margin-left: 20px;
+                    @include breakpoint(brotherbear) { margin-left: 0;}
+
+                    input[type="text"], input[type="email"]{
+                        border: 0!important; border-radius: 0!important;
+                    }
+
+                    &.submit { 
+                        @include breakpoint(brotherbear) { justify-content: center; display: flex;}
+                    }
+                }
+
+                input[type="text"],
+                input[type="email"] { background: $white; padding: 20px; border-radius: 3px; border: none; font-family: $primaryFont; font-size: 16px; min-width: 280px; color: $primary; border: 0;
+                    @include breakpoint(grandpabear) { min-width: 240px;}
+                    @include breakpoint(brotherbear) { margin-bottom: 10px; width: 100%;}
+
+                    &::-webkit-input-placeholder { color: $text; transition: all .4s ease;}
+                    &::-moz-placeholder { color: $text; transition: all .4s ease;}
+                    &:-ms-input-placeholder { color: $text; transition: all .4s ease;}
+                    &:-moz-placeholder { color: $text; transition: all .4s ease;}
+
+                    &:focus {
+                        &::-webkit-input-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
+                        &::-moz-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
+                        &:-ms-input-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
+                        &:-moz-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
+                    }
+                }
+
+                button { flex-grow: 1; background: $white; border: none; cursor: pointer; text-align: center; position: relative; font-size: 16px; font-weight: 800; color: $primary; padding: 20px 25px; font-family:$primaryFont; transition:all .3s ease; max-width: 165px; height: 100%; text-transform: uppercase; white-space: nowrap;
+
+                    &:hover { background:lighten($secondary, 3%); transition:all .3s ease;}
+                    
+                    @include breakpoint(brotherbear) { padding: 15px 20px; align-self: center;}
+                    @include breakpoint(mamabear) { width: 100%; max-width: 100%;}
+                }
+
+                &.gdpr { text-align: right; padding-top: 20px;
+                    @include breakpoint(grandpabear) { text-align: center; justify-content: center;}
+
+                    small { font-size: 14px; line-height: 20px; color: rgba(white, 0.5);}
+                }
+            }
+        }
+    }
+}
+
+/* Footer */
+footer { padding: 0; position: relative;
+
+    .footer__menus{
+        background: $primary;
+
+        .max__width{
+            padding: 60px; display:flex;
+            @include breakpoint(papabear) { flex-direction:column;}
+
+            article {
+                width: 20%;
+                
+                @include breakpoint(papabear) { width:100%; border-bottom: 1px $border solid;}
+
+                h5 { font-size: 20px; font-weight: 600; color: $white; padding-bottom:20px;
+                    @include breakpoint(papabear) { padding:20px 0; cursor:pointer;}
+
+                    span { display:none; float:right; font-size:30px; position:relative; top:-6px;
+                        @include breakpoint(papabear) { display:block;}
+
+                    }
+
+                }
+
+                ul { margin:0; padding:0;
+                    @include breakpoint(papabear) { font-size:16px; padding-bottom:20px;}
+
+                    li { list-style:none; padding-bottom:10px; color: $white; display: flex; font-size: 14px;
+                        @include breakpoint(papabear) { padding-bottom:10px;}
+
+                        i { font-size: 24px; color: $secondary; width: 22px; display: flex; justify-content: center; margin: 0px 15px 0 0;}
+
+                        img { width: 140px; margin-right: 10px;}
+
+                        a { font-size: 14px; color: $white; cursor: pointer;
+
+                            @include breakpoint(papabear) { font-size: 16px;}
+
+                            &:hover { color: $secondary; opacity: 1;}
+                        }
+                    }
+                }
+
+                &.social{
+                    display: flex; flex-direction: column;
+                    @include breakpoint(papabear) { display: initial;}
+
+                    .social-wrapper{
+                        li{ display: inline; float: left;}
+                    }
+
+                    .contact{
+                        margin-top: 20px;
+                        @include breakpoint(papabear) { margin-top: 40px;}
+                    }
+
+                    p{
+                        color: $white; padding-bottom: 5px;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    .subfooter {
+        background: $white; padding: 60px 0;
+        @include breakpoint(papabear) { margin-top: 0; border-top: none;}
+
+        .subfooter__credits { display:flex; flex-direction: column; text-align: center; align-items: center;
+
+            img{
+                width: 150px; margin-bottom: 20px;
+            }
+            
+            p { font-size:14px; line-height:20px; color: $text;
+                a { color: $secondary; padding: 0 10px; text-decoration: underline;
+                    &:hover { color: $secondary;}
+                }
+
+                &.credit{ 
+                    a{ padding: 0;}
+                }
+            }
+        }
+    }
+}
+
+.team__single__container{
+    padding: 60px 0; background: #f0f7fd; //margin-top: 54px;
+
+    .breadcrumbs{ padding-left: 0; padding-right: 0;}
+    
+    .max__width{
+        display: flex; flex-direction: column;
+
+        .top{
+            width: 100%; display: flex;
+
+            @include breakpoint(papabear){
+                flex-direction: column;;
+            }
+
+            .left{
+                width: 48%; padding-right: 2%;
+
+                @include breakpoint(papabear){
+                    width: 100%; padding-right: 0;
+                }
+    
+                .name{
+                    margin-bottom: 20px;
+        
+                    h3{
+                        font-size: 28px; color: $primary; font-weight: 600;
+                    }
+
+                    h5{
+                        font-size: 18px; color: $primary; font-weight: 400;
+                    }
+        
+                    p{
+                        padding-bottom: 10px; border-bottom: 1px solid $primary;
+                    }
+                }
+                
+                .details{
+        
+                    .item{
+                        margin-bottom: 10px;
+        
+                        h5{
+                            color: $primary; font-weight: 600; padding: 10px 0;
+                        }
+        
+                    }
+    
+                    .extra-details{
+                        margin-top: 40px;
+    
+                        p{
+                            a{
+                                color: $primary; text-decoration: underline;
+                            }
+                        }
+    
+                        .video-link{
+                            margin-top: 20px; display: inline-block; color: $primary; text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        
+            .right{
+                width: 48%; padding-left: 2%; margin: 0 auto;
+
+                @include breakpoint(papabear){
+                    width: 100%; padding-left: 0; margin-top: 40px;
+                }
+    
+                img{
+                    border-radius: 10px; max-width: 500px;
+
+                    @include breakpoint(papabear){
+                        width: 100%;
+                    }
+                }
+    
+                .details{
+    
+                    &.hide-section{
+                        display: none;
+                    }
+        
+                    .item{
+                        margin-bottom: 10px;
+        
+                        h5{
+                            color: $primary; font-weight: 600; padding: 10px 0;
+                        }
+        
+                    }
+                }
+    
+                .contact{
+                    display: flex; flex-direction: column; padding-bottom: 10px;
+    
+                    .phone, .email{
+                        padding: 5px 0; display: flex; align-items: center;
+        
+                        i{
+                            padding-right: 10px; font-size: 20px; color: $primary;
+                        }
+        
+                        a{
+                            color: $text;
+        
+                            &:hover{
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .about-my-photo{
+            width: 100%; margin-top: 50px;
+
+            .details{
+                display: flex;
+
+                @include breakpoint(papabear){
+                    flex-direction: column;
+                }
+
+                .left{
+                    width: 48%; padding-right: 2%;
+
+                    @include breakpoint(papabear){
+                        width: 100%; padding-right: 0; order: 2; margin-top: 40px;
+                    }
+
+                    img{
+                        border-radius: 10px; max-width: 500px; margin: 0 auto;
+
+                        @include breakpoint(papabear){
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .right{
+                    width: 48%; padding-left: 2%;
+
+                    @include breakpoint(papabear){
+                        width: 100%; padding-left: 0; order: 0;
+                    }
+
+                    h3{
+                        font-size: 28px; color: $primary; font-weight: 600; margin-bottom: 20px; 
+                    }
+
+                    .social{
+                        padding: 5px 0; display: flex; align-items: center;
+        
+                        i{
+                            padding-right: 10px; font-size: 30px; color: $primary;
+                        }
+        
+                        a{
+                            color: $text;
+        
+                            &:hover{
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// LANDING FORM
+#landingForm .gform_wrapper form .gform_body ul.gform_fields li.gfield .gfield_label{
+    color: white!important;
+}
+
+// Modules
+@import '../modules/gravity-forms/scss/gf';
+
+.page-id-399{
+    .banner{
+        @include breakpoint(sisterbear){
+            background-image: none!important;
+        }
+    }
+}
+
+.pay-template{
+    h1 { line-height: 38px; font-size: 32px; color: $primary;}
+
+    form{
+        margin-top: 20px;
+
+        input[type="text"]{
+            appearance: none; -webkit-appearance: none; border-radius: 3px; padding: 15px; background: #f1f5f7; color: #6b8aa2; border: none; border-bottom: 1px transparent solid; line-height: normal; display: block; width: 50%; transition: all 0.3s ease-in-out; box-sizing: border-box; font-size: 16px; height: auto !important;
+        }
+
+        input[type="submit"]{
+            margin-top: 10px; font-family: "Mont", sans-serif; padding: 14px 60px 9px; font-size: 20px; font-size: 1.25rem; border-radius: 3px; background: #022e4f; font-weight: 700; color: #fff; display: inline-block; border: 0; height: auto !important; transition: all 0.3s ease-in-out;
+        }
+    }
+}

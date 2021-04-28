@@ -1,0 +1,121 @@
+/*
+*	APF Search Form
+*
+*	Property search form style
+*
+*	@package Advanced Property Framework
+*	@version 1.0
+*/
+
+.apf__search { width:100%;
+	@include breakpoint(mamabear) { padding:0;}
+
+    form { display:flex; flex-wrap:wrap;
+
+        .apf__search__main { display:flex; flex-wrap:wrap; width: 100%;
+            @include breakpoint(brotherbear) { display: none;
+                &.open { display:flex;}
+            }
+        }
+
+		.apf__search__switch { display:flex; padding:5px; max-width: 240px;
+
+			@include breakpoint(brotherbear) { min-width:100%;}
+
+            label,
+			a { color:$primary; text-align:center; display:flex; justify-content:center; align-items:center; font-size: 16px; padding:0 12px; width:50%; background: darken($lightgrey, 5%); font-weight: 700; min-width: 104px; cursor: pointer;
+				@include breakpoint(brotherbear) { padding:15px 0;}
+
+				&:hover { background: darken($lightgrey, 10%);}
+
+				&:first-of-type { border-radius: 3px 0 0 3px;}
+				&:last-child { border-radius: 0 3px 3px 0;}
+
+            }
+
+            input[type="radio"] { display:none;
+                &:checked + label { background: $secondary; color: $primary;}
+            }
+            
+            &.column { flex-direction: column;
+                a,
+                label { flex-direction: column; flex: 1; width: auto;
+                    &:first-of-type { border-radius: 3px 3px 0 0;}
+				    &:last-child { border-radius: 0 0 3px 3px;}
+                }
+            }
+
+		}
+
+		.apf__area__search { background: rgba(255, 255, 255, 0.5); border:none; position:relative; border-radius:0; padding: 10px 20px; line-height:41px; color:$white; font-size:16px; font-family:$primaryFont; margin:5px; flex-grow:2; min-width:310px;
+
+            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                max-width: 450px;
+            }
+
+			@include breakpoint(brotherbear) { flex:1 0 97%;}
+            @include breakpoint(sisterbear) { box-shadow: none;}
+
+            &::-webkit-input-placeholder { color: $white; transition: all .4s ease;}
+            &::-moz-placeholder { color: $white; transition: all .4s ease;}
+            &:-ms-input-placeholder { color: $white; transition: all .4s ease;}
+            &:-moz-placeholder { color: $white; transition: all .4s ease;}
+
+            &:focus {
+                &::-webkit-input-placeholder { color: rgba($white, 0.4); transition: all .4s ease;}
+                &::-moz-placeholder { color: rgba($white, 0.4); transition: all .4s ease;}
+                &:-ms-input-placeholder { color: rgba($white, 0.4); transition: all .4s ease;}
+                &:-moz-placeholder { color: rgba($white, 0.4); transition: all .4s ease;}
+            }
+		}
+
+		.apf__search__selects { display:flex; flex-grow:1;
+
+			@include breakpoint(mamabear) { min-width:100%;}
+			@include breakpoint(sisterbear) { flex-wrap:wrap;}
+
+			.apf__select__wrap { display:flex; margin:5px; background: rgba(255, 255, 255, 0.5); border:5px solid transparent; flex: 1;
+
+                @include breakpoint(sisterbear) { width:90%; margin: 0; border: 5px #fff solid; box-shadow: none; flex: auto;}
+
+				.apf__select { width:100%; border:none; cursor:pointer; border-radius:0; padding: 11px 2% 10px; font-size: 16px; color:$white; letter-spacing:-0.5px; background-size:31px; font-family:$primaryFont; padding-left:5px; background:none;
+
+					@include breakpoint(sisterbear) { width:90%;}
+
+				}
+
+				select option { color: $primary;}
+
+				span { margin:auto; color:$text; font-size: 16px;
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        display: none;
+                    }
+                }
+
+				@include breakpoint(sisterbear) { width:50%;}
+			}
+
+		}
+
+		.apf__search__button { flex-grow:1; background:$secondary; border:none; cursor:pointer; text-align:center; position:relative; border-radius:none; font-size: 28px; color: $primary; padding:0 25px; font-family:$primaryFont; margin:5px; transition:all .3s ease; max-width: 165px;
+
+			&:hover { background:lighten($secondary, 3%); transition:all .3s ease; color: $primary;}
+
+			@include breakpoint(mamabear) { padding: 10px 20px; max-width: 100%; width: 100%;}
+
+            span { position: relative;}
+        }
+        
+        @import 'apf-filter-form';
+
+	}
+
+}
+
+.apf__combined {
+	.apf__search {
+		@include breakpoint(mamabear) {
+            &.show { display:block;}
+        }
+	}
+}

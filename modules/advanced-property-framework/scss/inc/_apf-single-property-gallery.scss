@@ -1,0 +1,52 @@
+/*
+*	Property gallery slider
+*
+*	@package Advanced Property Framework
+*	@version 1.0
+*/
+
+.apf__single__property__gallery { padding-bottom: 20px;
+
+    .property__gallery {
+
+        .property__gallery__slide { background:$lightgrey; text-align:center; cursor: pointer;
+            .property__image { background-size:cover; background-size:cover; background-position:center; background-repeat:no-repeat; min-height: 545px; border-radius: 3px;
+                @include breakpoint(papabear) { min-height: 450px;}
+                @include breakpoint(mamabear) { min-height: 350px;}
+                @include breakpoint(sisterbear) { min-height: 250px;}
+            }
+        }
+
+    }
+
+    /* LightSlider overrides */
+    .lSSlideOuter {
+
+        @include breakpoint(mamabear) { position:static; top:auto; left:auto;}
+
+        .lSPager { position:relative; z-index:2;
+            &.lSGallery {
+                li { opacity: 0.4;
+                    @include breakpoint(sisterbear) { height: auto;}
+
+                    &.active { border-radius: 0 !important; opacity: 1;}
+                    &:hover { border-radius: 0 !important; opacity: 0.8;}
+
+                    a { display: flex; justify-content: center; background: #000; height:95px; border-radius: 3px; overflow: hidden;
+                        @include breakpoint(grandpabear) { height: 72px;}
+                        @include breakpoint(brotherbear) { height: 95px;}
+                        @include breakpoint(mamabear) { height: 70px;}
+                        @include breakpoint(sisterbear) { height: 50px;}
+
+                        img { width: auto; height: 100%;}
+                    }
+                }
+            }
+        }
+    }
+
+    .lSAction {
+        &> a { z-index: 2;}
+    }
+
+}

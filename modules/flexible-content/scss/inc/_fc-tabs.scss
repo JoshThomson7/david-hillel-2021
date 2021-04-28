@@ -1,0 +1,36 @@
+/*
+---------------------------
+  ______      __
+ /_  __/___ _/ /_  _____
+  / / / __ `/ __ \/ ___/
+ / / / /_/ / /_/ (__  )
+/_/  \__,_/_.___/____/
+
+---------------------------
+Tabs
+*/
+
+.fc_tabs {
+    &.grey {
+        ul.tabbed {
+            li {
+                &.active a { background:#fff;}
+            }
+        }
+
+        .tab__content { background:#fff;}
+    }
+
+    ul.tabbed { padding:0; display:flex; width:100%; margin:0;
+
+        li { padding-bottom:0; list-style:none; margin:0; display:flex;
+            a { display:block; padding:10px 30px; text-align:center; font-size:18px; color:$secondary; text-transform:uppercase;
+                &:hover { background:lighten($lightgrey, 2%);}
+            }
+
+            &.active a { border-top:2px $primary solid; background:$lightgrey; font-weight:400; color:$primary;}
+        }
+    }
+
+    .tab__content { padding:20px; background:$lightgrey;}
+}

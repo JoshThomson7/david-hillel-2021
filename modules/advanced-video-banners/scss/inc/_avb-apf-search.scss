@@ -1,0 +1,64 @@
+/**
+ * AVB APF Search
+ *
+ * @package advanced-video-banners/
+ * @version 1.0
+*/
+
+.avb__apf__search { z-index: 5; width: 100%; 
+   
+    .max__width{ padding: 0;}
+    
+    @include breakpoint(brotherbear) { display: block; padding: 10px 0 20px; }
+
+    .apf__search__buyrent {
+
+        a { color: $primary; background: rgba(white, 0.2);
+
+            &:hover { background: $primary; color: $text;}
+            &.checked { background: $secondary; color: $primary;}
+
+            @include breakpoint(brotherbear) { color:$primary; background: $lightgrey;}
+
+        }
+
+    }
+
+    .apf__search { display: block; padding-top: 30px;
+
+        .apf__area__search { background: rgba(white, 1); color: $primary; min-width: 100%;
+            
+            &::-webkit-input-placeholder { color: $primary; transition: all .4s ease;}
+            &::-moz-placeholder { color: $primary; transition: all .4s ease;}
+            &:-ms-input-placeholder { color: $primary; transition: all .4s ease;}
+            &:-moz-placeholder { color: $primary; transition: all .4s ease;}
+
+            &:focus {
+                &::-webkit-input-placeholder { color: rgba($primary, 0.4); transition: all .4s ease;}
+                &::-moz-placeholder { color: rgba($primary, 0.4); transition: all .4s ease;}
+                &:-ms-input-placeholder { color: rgba($primary, 0.4); transition: all .4s ease;}
+                &:-moz-placeholder { color: rgba($primary, 0.4); transition: all .4s ease;}
+            }
+
+            @include breakpoint(brotherbear) { background:$lightgrey; color:$text;
+                &::-webkit-input-placeholder { color: $text; transition: all .4s ease;}
+                &::-moz-placeholder { color: $text; transition: all .4s ease;}
+                &:-ms-input-placeholder { color: $text; transition: all .4s ease;}
+                &:-moz-placeholder { color: $text; transition: all .4s ease;}
+
+                &:focus {
+                    &::-webkit-input-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
+                    &::-moz-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
+                    &:-ms-input-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
+                    &:-moz-placeholder { color: rgba($text, 0.4); transition: all .4s ease;}
+                }
+            }
+        }
+
+    }
+
+    .apf__search__button { 
+        @include breakpoint(mamabear) { max-width: 100%; padding: 15px 20px;}
+
+    }
+}

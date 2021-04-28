@@ -1,0 +1,114 @@
+.fc_featured_testimonials{
+
+
+    .featured-testimonials{
+
+        &--filter{ display: flex; align-items: center; justify-content: center; margin: 0 auto; white-space: nowrap;
+
+            span{ font-weight: 800; color: $primary; font-size: 1rem; padding-right: 30px; }
+
+            .btn-group{ display: flex; white-space: nowrap; border: 1px solid $border; border-right: 96px; background: $tertiary; border-radius: 96px; overflow: hidden;  user-select: none; z-index: 1; position: relative;
+                box-shadow:
+                0 12.5px 10px rgba(0, 0, 0, 0.08),
+                0 100px 80px rgba(0, 0, 0, 0.03)
+			    ;
+                
+                label{ padding: 8px 16px; display: inline-block; border-radius: 96px; position: relative; transition: color 250ms cubic-bezier(0, 0.95, 0.38, 0.98);  text-align: center;  white-space: nowrap; overflow: hidden;  text-overflow: ellipsis; cursor: pointer;
+                
+                    &:before{
+                        transition: all 250ms cubic-bezier(0, 0.95, 0.38, 0.98);
+                    }
+
+                    &:last-of-type:before {
+                        content: "";
+                        display: block;
+                        max-width: calc(33.3333333333% - 0px);
+                        margin: 0px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        z-index: -1;
+                        transform: translateX(0);
+                    }
+                    
+                }
+
+                input[type="radio"]{ appearance: none;  display: none; 
+
+                    &:checked + label{ background: $secondary; color: lighten($primary,10%); font-weight: 500; box-shadow: 0 12.5px 10px rgba(0, 0, 0, 0.08), 0 100px 80px rgba(0, 0, 0, 0.03);}
+                    
+                    &:nth-of-type(2):checked ~ label:last-of-type:before {
+                        transform: translateX(calc(0% + 0px));
+                    }
+
+                    &:nth-of-type(2):checked ~ label:last-of-type:before {
+                        transform: translateX(calc(100% + 0px));
+                    }
+                }
+                
+            }
+        }
+
+        &--single{ display: flex; padding: 30px 20px; box-sizing: border-box; align-items: center;
+
+            @include breakpoint(teenbear){flex-direction: column;}
+
+
+            &--box{ float: left; width: percentage(1/4); flex: 1 0 33%; padding-right: 50px; box-sizing: border-box; max-width: 31%;
+
+                @include breakpoint(papabear){flex:auto; padding-right: 20px;}
+                @include breakpoint(brotherbear){width: 50%; max-width: 50%;}
+                @include breakpoint(teenbear){width: 100%;max-width:100%;padding-right:0; text-align: center; margin-bottom:20px;}                
+
+                h3{ font-weight: bold; font-size: 1rem;}
+                p{ font-size: 0.85rem; line-height: 1.5;}
+                a.button{ display: inline-block; border-radius: 96px; padding: 15px 20px; font-size: 0.9rem;}
+
+
+            }
+
+            &--review{ width: percentage(2/4); display: flex; align-items: center; position: relative; flex: 1 0 66%;
+
+                @include breakpoint(brotherbear){flex: auto; justify-content: center;}
+                @include breakpoint(teenbear){width: 100%;max-width:100%;}                
+
+                &-image{ background-position: center; background-repeat: no-repeat; background-size: cover; background-color: $border; min-width: 450px; width: 450px; height: 450px; border-radius: 50%; z-index: 1;
+                
+                    @include breakpoint(grandmabear){min-width: 350px; width: 350px; height: 350px;}
+                    @include breakpoint(cousinbear){min-width: 300px; width: 300px; height: 300px;}
+                    @include breakpoint(babybear){min-width: 250px; width: 250px; height: 250px;}
+
+                }
+
+                &-content{ background: $primary; border-radius: 96px 96px; margin: 0 0 0 -300px; padding: 40px 80px 40px 350px;
+
+                    @include breakpoint(grandpabear){padding: 30px 50px 30px 320px;}
+                    @include breakpoint(papabear){padding: 30px 30px 30px 315px;}
+                    @include breakpoint(brotherbear){display: none;}
+
+                    h5{  color: $white; font-size: 0.8rem; font-weight: bold; margin-bottom: 0;}
+                    p{ color: $white; font-size: 1rem; line-height: 1.5;}
+                }
+
+                &:after{
+                    content:"\f10e";
+                    font-family: "Font Awesome 5 Pro";
+                    font-size: 30px; 
+                    position: absolute;
+                    font-weight: bold;
+                    right: 20px; 
+                    top: auto; 
+                    color: $secondary;
+                    
+                    @include breakpoint(papabear){display: none;}
+
+                }
+            
+            }
+
+        }
+     }
+
+}

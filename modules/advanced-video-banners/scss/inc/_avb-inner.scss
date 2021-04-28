@@ -1,0 +1,47 @@
+/**
+ * AVB Inner Banners
+ *
+ * @package advanced-video-banners/
+ * @version 1.0
+*/
+
+&.inner {
+
+    .banner { height: auto; position:relative; display: flex; align-items: center; padding: 200px 0 20px; background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;
+        @include breakpoint(mamabear) { padding: 40px 0;}
+
+        //@media only screen and (max-height:1000px) { padding: 40px 0;}
+
+        .max__width { display:flex; flex-direction: column; overflow: hidden; position: relative; z-index: 3; align-items: flex-start;
+            .avb__apf__search { position: static;
+                .max__width { padding: 0;}
+                .apf__search { border-top: 0;}
+            }
+        }
+
+        .banner__caption { top:auto;
+
+            h1 { font-size: 38px; color:#fff; font-weight: 700; position: relative; z-index: 2;
+                @include breakpoint(sisterbear) { font-size:28px; padding-top:80px;}
+            }
+
+            p { color: #fff; margin-top: 10px;
+                a{ color: #fff!important; text-decoration: underline;}
+            }
+
+            a{ color: #fff!important;}
+
+            &.align-centre { text-align:center; width:100%;}
+            &.align-right { text-align:right; width:100%;}
+        }
+
+        /* Video Banner */
+        .banner__video__player {
+            iframe,
+            object,
+            embed { transform:scale3d(1.8, 1.8, 1.8);}
+        }
+
+    }
+
+}
