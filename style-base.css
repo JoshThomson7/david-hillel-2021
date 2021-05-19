@@ -24242,10 +24242,14 @@ section.banners .medium-banner {
 section.banners .large-banner {
   min-height: 700px !important;
 }
-section.banners .banner {
-  position: relative;
+section.banners #home_banners .banner {
   height: 500px;
   min-height: 500px;
+}
+section.banners .banner {
+  position: relative;
+  height: 200px;
+  min-height: 200px;
   overflow: hidden;
   overflow: hidden;
   background: #222124;
@@ -24593,7 +24597,6 @@ section.banners.inner .banner {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 200px 0 20px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -25536,7 +25539,7 @@ Flexible Content
   }
 }
 .flexible__content .fc_feature .fc_feature_wrapper .feature__text h3 {
-  font-size: 20px;
+  font-size: 30px;
   line-height: 36px;
   font-family: "Museo 700";
 }

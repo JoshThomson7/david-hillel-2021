@@ -56,7 +56,7 @@ Feature
         .feature__text { padding-left: 25px;
             @include breakpoint(papabear) { width:100%; padding-left: 0;}
 
-            h3 { font-size: 20px; line-height: 36px; font-family: $boldFont;}
+            h3 { font-size: 30px; line-height: 36px; font-family: $boldFont;}
 
             p { font-size: 16px; line-height: 29px; margin-bottom: 20px;
                 &:last-child { margin-bottom: 0;}

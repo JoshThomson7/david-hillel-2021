@@ -18,8 +18,14 @@ section.banners { position: relative; overflow: hidden;
         min-height: 700px!important;
     }
 
+    #home_banners{
+        .banner{
+            height: 500px; min-height: 500px;
+        }
+    }
+
     /* Global */
-    .banner { position: relative; height: 500px; min-height: 500px; overflow: hidden; overflow: hidden; background: #222124;
+    .banner { position: relative; height: 200px; min-height: 200px; overflow: hidden; overflow: hidden; background: #222124;
 
         @include breakpoint(brotherbear) { height: calc(100vh - 500px);}
         @include breakpoint(mamabear) { height: calc(100vh - 650px);}
