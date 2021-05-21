@@ -46,15 +46,6 @@
                     }
                 }
 
-                &.property {
-
-                    &__wrapper{ box-shadow: none;}
-                    
-                    @import '../../../advanced-property-framework/scss/inc/apf-loop';
-
-                    article { width: 100%; border: none;}
-                }
-
                 &.team { display: flex; flex-direction: column; align-items: center; 
                     
                     .masonry__item__wrapper { 

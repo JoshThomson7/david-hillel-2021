@@ -676,7 +676,7 @@ section.team__filters .team__search__form input[type=text] {
   padding: 16px 50px 13px 15px;
   font-size: 16px;
   font-weight: 300;
-  color: #77748b;
+  color: #333235;
   cursor: pointer;
   margin-right: 20px;
   border-radius: 3px;
@@ -687,7 +687,7 @@ section.team__filters .team__search__form input[type=text] {
 }
 section.team__filters .team__search__form input[type=text]::placeholder {
   opacity: 0.8;
-  color: #77748b;
+  color: #333235;
 }
 section.team__filters .team__search__form input[type=text]:focus {
   border-color: #d1dee4;
@@ -699,7 +699,7 @@ section.team__filters .team__search__form .select2-container {
   border: 1px solid #e1e9ee;
   font-size: 16px;
   font-weight: 300;
-  color: #77748b;
+  color: #333235;
   cursor: pointer;
   margin-right: 20px;
   border-radius: 3px;
@@ -713,11 +713,11 @@ section.team__filters .team__search__form .select2-container {
   background-size: 21px;
 }
 section.team__filters .team__search__form .select2-container input[type=search] {
-  color: #77748b;
+  color: #333235;
 }
 section.team__filters .team__search__form .select2-container input[type=search]::placeholder {
   opacity: 0.8;
-  color: #77748b;
+  color: #333235;
 }
 section.team__filters .team__search__form .select2-container input[type=search]:focus {
   border-color: #d1dee4;
@@ -767,7 +767,7 @@ section.team__filters .team__search__form .input__search__text span {
   color: #99d3d5;
 }
 section.team__filters .team__search__form label {
-  color: #9290a2;
+  color: #4c4b4f;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -823,7 +823,7 @@ section.team__filters .team__results .loading-overlay {
   justify-content: center;
   align-items: center;
   z-index: 6;
-  background: rgba(146, 144, 162, 0.5);
+  background: rgba(76, 75, 79, 0.5);
 }
 section.team__filters .team__results .loading-overlay #spinner {
   width: 40px;
@@ -863,7 +863,7 @@ section.team__filters .team__results .masonry__item__wrapper .team__wrap article
   background: #99d3d5;
 }
 section.team__filters .team__results .masonry__item__wrapper .team__wrap article a .team__overlay.member-join {
-  background: #9290a2;
+  background: #4c4b4f;
   opacity: 1;
 }
 section.team__filters .team__results .masonry__item__wrapper .team__wrap article a .team__overlay.member-join:hover {
@@ -873,7 +873,7 @@ section.team__filters .team__results .masonry__item__wrapper .team__wrap article
 section.team__filters .team__results .masonry__item__wrapper .team__wrap article a .team__overlay.member-join span.team-more {
   width: 165px;
   background: #FFF;
-  color: #9290a2;
+  color: #4c4b4f;
   padding: 8px 20px;
 }
 section.team__filters .team__results .masonry__item__wrapper .team__wrap article a .team__overlay span.team__more {
