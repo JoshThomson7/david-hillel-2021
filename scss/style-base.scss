@@ -250,7 +250,7 @@ a.button, button.button { display: flex; background: $secondary; align-self: fle
 
 header.header { width:100%; transition: top .3s ease; position: sticky; z-index: 999999999; top: 0;
 
-    .header__main { position: relative; background: $white; padding: 10px 0 15px;
+    .header__main { position: relative; background: $white; padding: 10px 0 0;
         @include breakpoint(papabear) { padding: 5px 0;}
 
         .max__width { display: flex; justify-content: space-between; align-items: center;}
@@ -294,7 +294,7 @@ header.header { width:100%; transition: top .3s ease; position: sticky; z-index:
                 ul { display: flex; align-items: center; margin-left: 20px;
                     @include breakpoint(papabear) { margin-left: 0;}
     
-                    li  { padding: 0 10px; display: flex; align-items: center;
+                    li  { display: flex; align-items: center;
 
                         &.button{
                             background: $secondary; color: $white; padding: 8px 15px; margin-left: 10px;
@@ -306,8 +306,41 @@ header.header { width:100%; transition: top .3s ease; position: sticky; z-index:
                                 }
                             }
                         }
+
+                        &:hover {
+                            & > ul { display: flex;}
+                        }
+
+                        &.menu-item-has-children {
+            
+                            &:hover { background: darken($secondary, 5%);
+                                a{color: white;}
+                            }
+                        }
+            
+                        ul { position:absolute; top:100%; padding:0; width:100%; max-width:250px; background: #fff; z-index: 3; text-align: left; padding: 10px; display: none; flex-direction: column; box-shadow: 0 5px 10px rgba(black, 0.2); margin: 0;
+
+                            li { margin:0; border-top:none;
+
+                                a { padding: 10px 0; color: $text!important;
+                                    &:hover{color: $secondary;}
+                                }
+            
+                                &.current-menu-item {
+                                    a { color: $primary; display: block; border-bottom: none;
+                                        &:after { display: none;}
+                                    }
+                                }
+            
+                                &:hover {
+                                    &>a { color: $secondary!important; border-bottom:none; opacity: 1;}
+                                }
+            
+                                ul { top:0; left:100%; background:rgba($primary, 0.9);}
+                            }
+                        }
     
-                        a { font-size: 15px; color: $text; display: flex; align-items: center; text-transform: uppercase; text-align: center;
+                        a { font-size: 15px; color: $text; display: flex; align-items: center; text-transform: uppercase; text-align: center; padding: 25px 15px;
 
                             &:hover{
                                 color: $secondary;
@@ -364,7 +397,7 @@ header.header { width:100%; transition: top .3s ease; position: sticky; z-index:
             ul { display: flex; align-items: center;
                 @include breakpoint(papabear) { margin-left: 0;}
 
-                li  { padding: 0 10px; display: flex; align-items: center;
+                li  { margin: 0 10px; display: flex; align-items: center;
 
                     a { font-size: 16px; color: $white; display: flex; align-items: center;
 
@@ -516,6 +549,10 @@ footer { padding: 0; position: relative;
 
                     li { list-style:none; padding-bottom:10px; color: $white; display: flex; font-size: 14px;
                         @include breakpoint(papabear) { padding-bottom:10px;}
+
+                        ul{
+                            display: none!important;
+                        }
 
                         i { font-size: 24px; color: $white; width: 22px; display: flex; justify-content: center; margin: 0px 15px 0 0;
                             &:hover{
