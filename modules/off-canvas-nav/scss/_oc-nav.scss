@@ -13,7 +13,7 @@
     }
 
     .panel__left { width: 40%; padding: 150px 60px 0 0; transform: translateX(-1200px);
-        @include breakpoint(brotherbear) { width: 100%; background: #fff; padding: 95px 20px 40px;}
+        @include breakpoint(brotherbear) { width: 100%; background: #fff; padding: 115px 20px 40px;}
     }
     .panel__right { width: 60%; padding: 100px 0 40px 60px; transform: translateX(1200px);
         @include breakpoint(brotherbear) { width: 100%; background: $primary; padding: 40px 20px;}

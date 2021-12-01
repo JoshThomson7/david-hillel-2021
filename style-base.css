@@ -23112,7 +23112,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .oc__nav .panel__left {
     width: 100%;
     background: #fff;
-    padding: 95px 20px 40px;
+    padding: 115px 20px 40px;
   }
 }
 .oc__nav .panel__right {
@@ -27005,7 +27005,7 @@ Flexible Content
   color: #99d3d5;
 }
 .flexible__content .fc_contact .fc_contact_wrapper article ul li.address {
-  align-items: flex-start;
+  align-items: center;
 }
 .flexible__content .fc_contact .fc_contact_wrapper article #map_single {
   height: 450px;

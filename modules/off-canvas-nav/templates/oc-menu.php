@@ -9,7 +9,7 @@
         
         <article class="oc__nav__content__panel panel__left">
             <div class="asm">
-                <?php wp_nav_menu(array('menu' => 'Northfields', 'items_wrap' => '<ul class="asm__main">%3$s</ul>', 'container' => false, 'walker' => new Slide_Menu)); ?>
+                <?php wp_nav_menu(array('menu' => 'Main Menu', 'items_wrap' => '<ul class="asm__main">%3$s</ul>', 'container' => false, 'walker' => new Slide_Menu)); ?>
             </div><!-- asm -->
         </article>
 

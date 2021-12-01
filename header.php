@@ -41,7 +41,7 @@
 
                         <ul class="contact">
                             <li><i class="fa fa-phone"></i><a href="tel:02084442233">020 8444 2233</a></li>
-                            <li><i class="fa fa-envelope"></i><a href="mailto:snrub@talktalk.net">Email Us</a></li>
+                            <li><i class="fa fa-envelope"></i><a href="mailto:office@davidhillel.co.uk">Email Us</a></li>
                         </ul>
 
                         <div class="header__menu">

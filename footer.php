@@ -17,9 +17,9 @@
                 <?php endwhile; ?>
 
                 <article class="footer__menu social">
-                   <h5>Follow Us <span class="ion-ios-plus-empty"></span></h5>
+                   <h5>Find Us <span class="ion-ios-plus-empty"></span></h5>
                     <?php if(get_field('header_social', 'options')): ?>
-                        <ul class="social-wrapper">
+                        <!-- <ul class="social-wrapper">
                             <?php while(have_rows('header_social', 'options')) : the_row(); ?>
                                 <li>
                                     <a href="<?php the_sub_field('header_social_url'); ?>" title="<?php the_sub_field('header_social_platform'); ?>" target="_blank">
@@ -27,7 +27,8 @@
                                     </a>
                                 </li>
                             <?php endwhile; ?>
-                        </ul><!-- header__social -->
+                        </ul> -->
+                        <!-- header__social -->
 
                         <ul class="contact">
                             <li>119 High Road</li>
